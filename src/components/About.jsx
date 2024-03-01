@@ -11,6 +11,12 @@ const About = () => {
         >
           About me
         </Heading>
+
+        <Text>
+          {" "}
+          Software developer with a passion for building and designing
+          innovative aplications. Always improving and learning as I go on.
+        </Text>
       </Container>
     </>
   );
