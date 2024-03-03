@@ -47,7 +47,11 @@ const About = () => {
                   "0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px purple, 0 0 30px purple, 0 0 40px purple, 0 0 55px purple, 0 0 75px purple",
               }}
             >
-              Frontend Developer.
+              Frontend Developer
+            </Heading>
+            <Heading textAlign="start" size={{ base: "2xl", lg: "lg" }}>
+              with a passion for building and designing innovative aplications.
+              Always improving and learning as I go on.
             </Heading>
           </VStack>
 

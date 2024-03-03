@@ -1,78 +1,144 @@
 import React from "react";
 import {
+  Image,
+  useColorModeValue,
   Box,
   Heading,
   Text,
-  Center,
-  useColorModeValue,
   SimpleGrid,
+  Flex,
+  Stack,
+  Center,
   Container,
-  Image,
+  useBreakpointValue,
 } from "@chakra-ui/react";
-
-import { boxBackgroundColor, boxFontColor } from "../tools/colors";
+import { boxBackgroundColor, boxBorderColor } from "../tools/colors";
+import Rakeoff from "../assets/rakeoff.png";
 
 const Experience = () => {
   return (
-    <Container maxW="7xl" mt={{ base: 12, md: "5rem" }} p={0}>
-      <Center mb={8}>
-        <Heading size={{ base: "2xl", md: "3xl" }} color="white">
-          Experience
-        </Heading>
-      </Center>
-      <SimpleGrid columns={[1, null, 2]} mx={{ base: 3, md: 3, lg: 0 }} gap={8}>
-        <ExperienceCard
-          heading={"Rakeoff dapp"}
-          text={"Co-founder rakeoff dapp"}
-        />
-        <ExperienceCard heading={"Eir"} text={"Intern"} />
-      </SimpleGrid>
-    </Container>
+    <>
+      <Container maxW="7xl" mt={{ base: 12, md: "5rem" }} p={0}>
+        <Center mb={8}>
+          <Heading size={{ base: "2xl", md: "3xl" }} color="white">
+            Projects
+          </Heading>
+        </Center>
+        <Stack
+          direction="column"
+          w="100%"
+          spacing={{ base: "50px", md: "100px" }}
+        >
+          <Project
+            image={Rakeoff}
+            heading={"Rakeoff DeFi app"}
+            description={`Co-founder`}
+          />
+        </Stack>
+      </Container>
+    </>
   );
 };
-
 export default Experience;
 
-const ExperienceCard = ({ image, heading, text }) => {
-  return (
-    <Center>
-      <Box
-        w="100%"
-        borderRadius="md"
-        overflow={"hidden"}
-        borderColor="black"
-        boxShadow={useColorModeValue(
-          "10px 10px 0 purple",
-          "10px 10px 0 blueviolet"
-        )}
-        mx={{ lg: 3 }}
-      >
-        <Image
-          src={image}
-          h={60}
-          w="100%"
-          objectFit="cover"
-          alt={"Rakeoff feature Image"}
-        />
+export const Project = ({ heading, description, image, isEven }) => {
+  const isDesktop = useBreakpointValue({ base: false, md: true, lg: true });
 
-        <Box bg={boxBackgroundColor} px={{ base: 4, md: 6, lg: 8 }} py={6}>
-          <Heading
-            textAlign={{ base: "center", md: "start" }}
-            color={"white"}
-            fontSize={"3xl"}
-            noOfLines={1}
-          >
-            {heading}
-          </Heading>
-          <Text
-            textAlign={{ base: "center", md: "start" }}
-            color={boxFontColor}
-            fontSize={{ base: "lg", lg: "xl" }}
-          >
-            {text}
-          </Text>
-        </Box>
-      </Box>
-    </Center>
+  return (
+    <>
+      <SimpleGrid columns={[1, null, 2]} w="100%" spacing="45px">
+        {isEven && isDesktop ? (
+          <>
+            <VideoStep image={image} />{" "}
+            <TextStep heading={heading} description={description} />
+          </>
+        ) : (
+          <>
+            <TextStep heading={heading} description={description} />
+            <VideoStep image={image} />
+          </>
+        )}
+      </SimpleGrid>
+    </>
   );
 };
+
+function TextStep({ heading, description }) {
+  return (
+    <div>
+      <Heading
+        lineHeight={1.1}
+        fontWeight={600}
+        fontSize={{ base: "3xl", md: "2xl", lg: "4xl", xl: "5xl" }}
+        mx={{ base: 2, md: 0 }}
+      >
+        <Text
+          textAlign={{
+            base: "center",
+            md: "center",
+            lg: "center",
+            xl: "start",
+          }}
+          mb={{ base: 2, md: 0, lg: 2, xl: 0 }}
+          color={"purple.400"}
+        >
+          {heading}
+        </Text>
+      </Heading>
+      <Text
+        textAlign={{
+          base: "center",
+          md: "center",
+          lg: "center",
+          xl: "start",
+        }}
+        color={"gray.100"}
+        fontSize={{ base: "lg", md: "lg", lg: "xl" }}
+        mt={{ base: 8, md: 8 }}
+        mx={{ base: 2, md: 2, lg: 2 }}
+      >
+        {description}
+      </Text>
+    </div>
+  );
+}
+
+function VideoStep({ image }) {
+  return (
+    <>
+      <Flex
+        flex={1}
+        justify={"center"}
+        align={"center"}
+        position={"relative"}
+        w={"full"}
+      >
+        <Box
+          flex={1}
+          justify={"center"}
+          align={"center"}
+          position={"relative"}
+          w={"full"}
+          height={{ base: "210px", md: "200px", lg: "220px", xl: "300px" }}
+          rounded={"2xl"}
+          mx={{ base: 3, md: 3, lg: 3, xl: 0 }}
+          width={"full"}
+          overflow={"hidden"}
+          borderRadius="2xl"
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true, amount: 0.2 }}
+          bg={boxBackgroundColor}
+          border={boxBorderColor}
+          borderColor="black"
+          boxShadow={useColorModeValue(
+            "10px 10px 0 purple",
+            "10px 10px 0 blueviolet"
+          )}
+        >
+          <Image src={image} alt="step" objectFit="cover" />
+        </Box>
+      </Flex>
+    </>
+  );
+}
