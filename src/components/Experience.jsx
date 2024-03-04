@@ -1,7 +1,6 @@
 import React from "react";
 import {
   Image,
-  useColorModeValue,
   Box,
   Heading,
   Text,
@@ -31,8 +30,9 @@ const Experience = () => {
         >
           <Project
             image={Rakeoff}
-            heading={"Rakeoff DeFi app"}
-            description={`Co-founder`}
+            heading={"Rakeoff labs | Co-founder"}
+            description={`- Built on the ICP blockchain which we received a $25k developer grant.`}
+            description1={`- Designed the front-end using ReactJS and Chakra UI.`}
           />
         </Stack>
       </Container>
@@ -41,7 +41,13 @@ const Experience = () => {
 };
 export default Experience;
 
-export const Project = ({ heading, description, image, isEven }) => {
+export const Project = ({
+  heading,
+  description,
+  description1,
+  image,
+  isEven,
+}) => {
   const isDesktop = useBreakpointValue({ base: false, md: true, lg: true });
 
   return (
@@ -50,11 +56,19 @@ export const Project = ({ heading, description, image, isEven }) => {
         {isEven && isDesktop ? (
           <>
             <VideoStep image={image} />{" "}
-            <TextStep heading={heading} description={description} />
+            <TextStep
+              heading={heading}
+              description={description}
+              description1={description1}
+            />
           </>
         ) : (
           <>
-            <TextStep heading={heading} description={description} />
+            <TextStep
+              heading={heading}
+              description={description}
+              description1={description1}
+            />
             <VideoStep image={image} />
           </>
         )}
@@ -63,7 +77,7 @@ export const Project = ({ heading, description, image, isEven }) => {
   );
 };
 
-function TextStep({ heading, description }) {
+function TextStep({ heading, description, description1 }) {
   return (
     <div>
       <Heading
@@ -99,6 +113,20 @@ function TextStep({ heading, description }) {
       >
         {description}
       </Text>
+      <Text
+        textAlign={{
+          base: "center",
+          md: "center",
+          lg: "center",
+          xl: "start",
+        }}
+        color={"gray.100"}
+        fontSize={{ base: "lg", md: "lg", lg: "xl" }}
+        mt={{ base: 8, md: 8 }}
+        mx={{ base: 2, md: 2, lg: 2 }}
+      >
+        {description1}
+      </Text>
     </div>
   );
 }
@@ -111,32 +139,29 @@ function VideoStep({ image }) {
         justify={"center"}
         align={"center"}
         position={"relative"}
-        w={"full"}
+        w={"350px"}
       >
         <Box
           flex={1}
           justify={"center"}
           align={"center"}
-          position={"relative"}
-          w={"full"}
-          height={{ base: "210px", md: "200px", lg: "220px", xl: "300px" }}
-          rounded={"2xl"}
+          height={{ base: "210px", md: "200px", lg: "80px", xl: "220px" }}
+          rounded={"xl"}
           mx={{ base: 3, md: 3, lg: 3, xl: 0 }}
           width={"full"}
           overflow={"hidden"}
-          borderRadius="2xl"
-          initial="offscreen"
-          whileInView="onscreen"
-          viewport={{ once: true, amount: 0.2 }}
+          borderRadius="xl"
           bg={boxBackgroundColor}
           border={boxBorderColor}
           borderColor="black"
-          boxShadow={useColorModeValue(
-            "10px 10px 0 purple",
-            "10px 10px 0 blueviolet"
-          )}
         >
-          <Image src={image} alt="step" objectFit="cover" />
+          <Image
+            src={image}
+            boxSize={"230px"}
+            mb={4}
+            alt="step"
+            objectFit="contain"
+          />
         </Box>
       </Flex>
     </>
