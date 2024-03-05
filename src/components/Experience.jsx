@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Image,
   Box,
@@ -7,22 +7,27 @@ import {
   SimpleGrid,
   Flex,
   Stack,
-  Center,
   Container,
   useBreakpointValue,
 } from "@chakra-ui/react";
-import { boxBackgroundColor, boxBorderColor } from "../tools/colors";
+import { boxBorderColor } from "../tools/colors";
 import Rakeoff from "../assets/rakeoff.png";
+import jobon from "../assets/jobon.png";
+import { motion, useTime, useTransform } from "framer-motion";
 
 const Experience = () => {
   return (
     <>
       <Container maxW="7xl" mt={{ base: 12, md: "5rem" }} p={0}>
-        <Center mb={8}>
-          <Heading size={{ base: "2xl", md: "3xl" }} color="white">
-            Projects
-          </Heading>
-        </Center>
+        <Heading
+          mb={8}
+          textAlign="start"
+          size={{ base: "2xl", md: "3xl" }}
+          color="pink.400"
+        >
+          Projects
+        </Heading>
+
         <Stack
           direction="column"
           w="100%"
@@ -33,6 +38,12 @@ const Experience = () => {
             heading={"Rakeoff labs | Co-founder"}
             description={`- Built on the ICP blockchain which we received a $25k developer grant.`}
             description1={`- Designed the front-end using ReactJS and Chakra UI.`}
+          />
+          <Project
+            image={jobon}
+            heading={"Jobon"}
+            description={`- Built a tradesman job site using Django and Javascript.`}
+            description1={`- Awared best overall final year project in my class '23.`}
           />
         </Stack>
       </Container>
@@ -94,7 +105,7 @@ function TextStep({ heading, description, description1 }) {
             xl: "start",
           }}
           mb={{ base: 2, md: 0, lg: 2, xl: 0 }}
-          color={"purple.400"}
+          color={"grey.400"}
         >
           {heading}
         </Text>
@@ -139,7 +150,7 @@ function VideoStep({ image }) {
         justify={"center"}
         align={"center"}
         position={"relative"}
-        w={"350px"}
+        w={"234px"}
       >
         <Box
           flex={1}
@@ -151,17 +162,11 @@ function VideoStep({ image }) {
           width={"full"}
           overflow={"hidden"}
           borderRadius="xl"
-          bg={boxBackgroundColor}
+          bg="purple.600"
           border={boxBorderColor}
           borderColor="black"
         >
-          <Image
-            src={image}
-            boxSize={"230px"}
-            mb={4}
-            alt="step"
-            objectFit="contain"
-          />
+          <Image src={image} boxSize={"230px"} alt="step" objectFit="contain" />
         </Box>
       </Flex>
     </>
