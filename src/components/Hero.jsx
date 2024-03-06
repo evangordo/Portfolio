@@ -6,11 +6,39 @@ import {
   Image,
   useColorModeValue,
   Container,
+  HStack,
 } from "@chakra-ui/react";
 import Linkedin from "../assets/profile.png";
 import Shamrock from "../assets/shamrock.png";
+import ReactLogo from "../assets/react.png";
+import JavaScipt from "../assets/javascript.png";
+import TypeScript from "../assets/typescript.png";
+import Chakra from "../assets/chakra.png";
+import Python from "../assets/python.png";
+import TailWind from "../assets/tailwindsvg.svg";
+import Figma from "../assets/figma.svg";
+import { motion } from "framer-motion";
 
 const About = () => {
+  const container = {
+    hidden: { opacity: 1, scale: 0 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+    },
+  };
   // const isDesktop = useBreakpointValue({ base: false, md: true });
 
   return (
@@ -20,7 +48,7 @@ const About = () => {
           justify="center"
           as="h1"
           align="center"
-          h={{ base: "30vh", lg: "60vh" }}
+          h={{ base: "30vh", lg: "80vh" }}
           textAlign="center"
           gap={{ base: 4, lg: 16 }}
         >
@@ -50,9 +78,39 @@ const About = () => {
               Frontend Developer
             </Heading>
             <Heading textAlign="start" size={{ base: "2xl", lg: "lg" }}>
-              with a passion for building and designing innovative aplications.
-              Always improving and learning as I go on.
+              designing innovative aplications. Always improving and learning as
+              I go on.
             </Heading>
+            <motion.div
+              className="container"
+              variants={container}
+              initial="hidden"
+              animate="visible"
+            >
+              <HStack spacing={4}>
+                <motion.div variants={item}>
+                  <Image boxSize={7} src={ReactLogo} />
+                </motion.div>
+                <motion.div variants={item}>
+                  <Image boxSize={7} src={JavaScipt} />
+                </motion.div>
+                <motion.div variants={item}>
+                  <Image boxSize={7} src={TypeScript} />
+                </motion.div>
+                <motion.div variants={item}>
+                  <Image boxSize={7} src={Python} />
+                </motion.div>
+                <motion.div variants={item}>
+                  <Image boxSize={7} src={Chakra} />
+                </motion.div>
+                <motion.div variants={item}>
+                  <Image boxSize={7} src={TailWind} />
+                </motion.div>
+                <motion.div variants={item}>
+                  <Image boxSize={7} src={Figma} />
+                </motion.div>
+              </HStack>
+            </motion.div>
           </VStack>
 
           <Image
