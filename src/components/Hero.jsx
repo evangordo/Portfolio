@@ -7,6 +7,7 @@ import {
   useColorModeValue,
   Container,
   HStack,
+  SimpleGrid,
 } from "@chakra-ui/react";
 import Linkedin from "../assets/profile.png";
 import Shamrock from "../assets/shamrock.png";
@@ -69,10 +70,10 @@ const About = () => {
               size={{ base: "2xl", lg: "4xl" }}
               colorScheme="red"
               _hover={{ textDecoration: "underline" }}
-              _dark={{ color: "purple.400" }}
+              _dark={{ color: "blue.700" }}
               style={{
                 textShadow:
-                  "0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px purple, 0 0 30px purple, 0 0 40px purple, 0 0 55px purple, 0 0 75px purple",
+                  "0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px blue, 0 0 30px blue, 0 0 40px blue, 0 0 55px blue, 0 0 75px blue",
               }}
             >
               Frontend Developer
@@ -81,6 +82,7 @@ const About = () => {
               designing innovative aplications. Always improving and learning as
               I go on.
             </Heading>
+
             <motion.div
               className="container"
               variants={container}
@@ -117,8 +119,8 @@ const About = () => {
             mx={{ base: 2, lg: 0 }}
             borderColor="black"
             boxShadow={useColorModeValue(
-              "10px 10px 0 purple",
-              "10px 10px 0 blueviolet"
+              "10px 10px 0 blue",
+              "10px 10px 0 blue"
             )}
             borderRadius="full"
             boxSize={{ base: "150px", lg: "250px" }}

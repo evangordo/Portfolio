@@ -41,8 +41,10 @@ const Experience = () => {
               <Project
                 image={Rakeoff}
                 heading={" May '23 - Present"}
-                description={`- Built on the ICP blockchain which we received a $25k developer grant.`}
-                description1={`- Designed the front-end using ReactJS and Chakra UI.`}
+                description={[
+                  `Built on the ICP blockchain which we received a $25k developer grant.`,
+                  `Designed the frontend using ReactJS and Chakra UI.`,
+                ]}
                 bg={"purple.600"}
                 link={"https://rakeoff.io/"}
                 tags={[
@@ -62,8 +64,10 @@ const Experience = () => {
               <Project
                 image={jobon}
                 heading={"2022 - 2023"}
-                description={`- Built a tradesman job site using Django and Javascript.`}
-                description1={`- Awared best overall final year project in my class '23.`}
+                description={[
+                  `Built a tradesman job site using Django and Javascript.`,
+                  `Awared highest graded final year project in my class '23.`,
+                ]}
                 bg={"#004aad"}
                 tags={[
                   "Django",
@@ -142,20 +146,11 @@ function TextStep({ heading, description, description1 }) {
         fontSize={{ base: "lg", md: "lg", lg: "xl" }}
         mt={{ base: 8, md: 2 }}
       >
-        {description}
-      </Text>
-      <Text
-        textAlign={{
-          base: "center",
-          md: "center",
-          lg: "center",
-          xl: "start",
-        }}
-        color={"gray.100"}
-        fontSize={{ base: "lg", md: "lg", lg: "xl" }}
-        mt={{ base: 8, md: 8 }}
-      >
-        {description1}
+        <ul>
+          {description.map((point) => (
+            <li>{point}</li>
+          ))}
+        </ul>
       </Text>
     </div>
   );
