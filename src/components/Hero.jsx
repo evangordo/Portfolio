@@ -1,14 +1,17 @@
 import React from "react";
 import {
-  Heading,
+  Container,
+  Stack,
   Flex,
-  VStack,
+  Box,
+  Heading,
+  Text,
+  Button,
   Image,
   useColorModeValue,
-  Container,
-  HStack,
   SimpleGrid,
 } from "@chakra-ui/react";
+
 import Linkedin from "../assets/profile.png";
 import Shamrock from "../assets/shamrock.png";
 import ReactLogo from "../assets/react.png";
@@ -20,7 +23,7 @@ import TailWind from "../assets/tailwindsvg.svg";
 import Figma from "../assets/figma.svg";
 import { motion } from "framer-motion";
 
-const About = () => {
+export default function About() {
   const container = {
     hidden: { opacity: 1, scale: 0 },
     visible: {
@@ -40,35 +43,32 @@ const About = () => {
       opacity: 1,
     },
   };
-  // const isDesktop = useBreakpointValue({ base: false, md: true });
-
   return (
-    <>
-      <Container maxW="6xl" mt={{ base: 12, md: "5rem" }} p={0}>
-        <Flex
-          justify="center"
-          as="h1"
-          align="center"
-          h={{ base: "30vh", lg: "80vh" }}
-          textAlign="center"
-          gap={{ base: 4, lg: 16 }}
+    <Container maxW={"7xl"}>
+      <Flex
+        justify="center"
+        as="h1"
+        align="center"
+        h={"100vh"}
+        textAlign="center"
+        gap={{ base: 4, lg: 16 }}
+      >
+        <Stack
+          py={{ base: 20, md: 120 }}
+          direction={{ base: "column", md: "row" }}
         >
-          <VStack align={{ base: "center", lg: "start" }} spacing={3}>
-            <Flex>
-              <Heading
-                size={{ base: "2xl", lg: "4xl" }}
-                mx={{ base: 8, lg: 0 }}
-                textAlign="center"
-              >
+          <Stack flex={1} spacing={{ base: 5, md: 5 }}>
+            <Flex justify={{ base: "center", md: "start" }}>
+              <Heading size={{ base: "3xl", lg: "4xl" }} textAlign="center">
                 Evan Gordon
               </Heading>
-              <Image src={Shamrock} alt="Evan" boxSize={{ base: 8, lg: 10 }} />
+              <Image src={Shamrock} alt="Evan" boxSize={{ base: 5, lg: 10 }} />
             </Flex>
+
             <Heading
               mx={{ base: 8, lg: 0 }}
-              textAlign="start"
-              size={{ base: "2xl", lg: "4xl" }}
-              colorScheme="red"
+              textAlign={{ base: "center", sm: "start", md: "start" }}
+              size={{ base: "xl", sm: "xl", lg: "3xl" }}
               _hover={{ textDecoration: "underline" }}
               _dark={{ color: "blue.700" }}
               style={{
@@ -78,59 +78,77 @@ const About = () => {
             >
               Frontend Developer
             </Heading>
-            <Heading textAlign="start" size={{ base: "2xl", lg: "lg" }}>
-              designing innovative aplications. Always improving and learning as
-              I go on.
-            </Heading>
 
-            <motion.div
-              className="container"
-              variants={container}
-              initial="hidden"
-              animate="visible"
+            <Heading
+              textAlign={{ base: "center", md: "start" }}
+              size={{ base: "lg", lg: "lg" }}
             >
-              <HStack spacing={4}>
-                <motion.div variants={item}>
-                  <Image boxSize={7} src={ReactLogo} />
-                </motion.div>
-                <motion.div variants={item}>
-                  <Image boxSize={7} src={JavaScipt} />
-                </motion.div>
-                <motion.div variants={item}>
-                  <Image boxSize={7} src={TypeScript} />
-                </motion.div>
-                <motion.div variants={item}>
-                  <Image boxSize={7} src={Python} />
-                </motion.div>
-                <motion.div variants={item}>
-                  <Image boxSize={7} src={Chakra} />
-                </motion.div>
-                <motion.div variants={item}>
-                  <Image boxSize={7} src={TailWind} />
-                </motion.div>
-                <motion.div variants={item}>
-                  <Image boxSize={7} src={Figma} />
-                </motion.div>
-              </HStack>
-            </motion.div>
-          </VStack>
-
-          <Image
-            mx={{ base: 2, lg: 0 }}
-            borderColor="black"
-            boxShadow={useColorModeValue(
-              "10px 10px 0 blue",
-              "10px 10px 0 blue"
-            )}
-            borderRadius="full"
-            boxSize={{ base: "150px", lg: "250px" }}
-            src={Linkedin}
-            alt="Evan"
-          />
-        </Flex>
-      </Container>
-    </>
+              designing interesting aplications. Always improving and learning
+              as I go on.
+            </Heading>
+            <Stack
+              align="center"
+              spacing={{ base: 4, sm: 6 }}
+              direction={{ base: "column", sm: "row" }}
+            >
+              <motion.div
+                className="container"
+                variants={container}
+                initial="hidden"
+                animate="visible"
+              >
+                <SimpleGrid
+                  columns={[4, null, 7]}
+                  spacing={{ base: 10, md: 5 }}
+                >
+                  <motion.div variants={item}>
+                    <Image boxSize={7} src={ReactLogo} />
+                  </motion.div>
+                  <motion.div variants={item}>
+                    <Image boxSize={7} src={JavaScipt} />
+                  </motion.div>
+                  <motion.div variants={item}>
+                    <Image boxSize={7} src={TypeScript} />
+                  </motion.div>
+                  <motion.div variants={item}>
+                    <Image boxSize={7} src={Python} />
+                  </motion.div>
+                  <motion.div variants={item}>
+                    <Image boxSize={7} src={Chakra} />
+                  </motion.div>
+                  <motion.div variants={item}>
+                    <Image boxSize={7} src={TailWind} />
+                  </motion.div>
+                  <motion.div variants={item}>
+                    <Image boxSize={7} src={Figma} />
+                  </motion.div>
+                </SimpleGrid>
+              </motion.div>
+            </Stack>
+          </Stack>
+          <Flex
+            flex={1}
+            justify={"center"}
+            align={"center"}
+            position={"relative"}
+            w={"full"}
+          >
+            <Image
+              mt={{ base: 7, lg: 0 }}
+              mx={{ base: 2, lg: 0 }}
+              borderColor="black"
+              boxShadow={useColorModeValue(
+                "10px 10px 0 blue",
+                "10px 10px 0 blue"
+              )}
+              borderRadius="full"
+              boxSize={{ base: "200px", lg: "280px" }}
+              src={Linkedin}
+              alt="Evan"
+            />
+          </Flex>
+        </Stack>
+      </Flex>
+    </Container>
   );
-};
-
-export default About;
+}

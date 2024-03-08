@@ -9,6 +9,8 @@ import {
   Stack,
   Container,
   Link,
+  UnorderedList,
+  ListItem,
 } from "@chakra-ui/react";
 import { boxBorderColor } from "../tools/colors";
 import Rakeoff from "../assets/rakeoff.png";
@@ -31,8 +33,8 @@ const Experience = () => {
           <Container maxW="7xl" mt={{ base: 12, md: "5rem" }} p={0}>
             <Heading
               mb={12}
-              textAlign="start"
-              size={{ base: "2xl", md: "4xl" }}
+              textAlign={{ base: "center", md: "start" }}
+              size={{ base: "3xl", md: "4xl" }}
             >
               Projects
             </Heading>
@@ -66,7 +68,7 @@ const Experience = () => {
                 heading={"2022 - 2023"}
                 description={[
                   `Built a tradesman job site using Django and Javascript.`,
-                  `Awared highest graded final year project in my class '23.`,
+                  `Awarded highest graded final year project in my class '23.`,
                 ]}
                 bg={"#004aad"}
                 tags={[
@@ -88,32 +90,20 @@ const Experience = () => {
 };
 export default Experience;
 
-export const Project = ({
-  heading,
-  description,
-  description1,
-  image,
-  bg,
-  tags,
-  link,
-}) => {
+export const Project = ({ heading, description, image, bg, tags, link }) => {
   return (
     <>
       <SimpleGrid columns={[1, null, 3]} gap={6}>
         <Logo image={image} bg={bg} link={link} />
 
-        <TextStep
-          heading={heading}
-          description={description}
-          description1={description1}
-        />
+        <TextStep heading={heading} description={description} />
         <TechStak tags={tags} />
       </SimpleGrid>
     </>
   );
 };
 
-function TextStep({ heading, description, description1 }) {
+function TextStep({ heading, description }) {
   return (
     <div>
       <Heading
@@ -144,13 +134,15 @@ function TextStep({ heading, description, description1 }) {
         }}
         color={"gray.100"}
         fontSize={{ base: "lg", md: "lg", lg: "xl" }}
-        mt={{ base: 8, md: 2 }}
+        mt={{ base: 4, md: 2 }}
       >
-        <ul>
-          {description.map((point) => (
-            <li>{point}</li>
+        <UnorderedList>
+          {description.map((point, index) => (
+            <ListItem key={index} m={4}>
+              {point}
+            </ListItem>
           ))}
-        </ul>
+        </UnorderedList>
       </Text>
     </div>
   );
@@ -161,45 +153,35 @@ function Logo({ image, bg, link }) {
     <>
       <motion.a whileHover={{ scale: 1.1 }}>
         <Link href={link} isExternal>
-          <motion.div
-            initial={{ scale: 0 }}
-            animate={{ rotate: 360, scale: 1 }}
-            transition={{
-              type: "spring",
-              stiffness: 60,
-              damping: 20,
-            }}
+          <Flex
+            flex={1}
+            justify={{ base: "right", md: "center" }}
+            align={{ base: "right", md: "center" }}
+            w={{ base: "full", md: "300px" }}
           >
-            <Flex
+            <Box
               flex={1}
               justify={"center"}
               align={"center"}
-              position={"relative"}
-              w={"250px"}
+              height={{ base: "210px", md: "200px", lg: "80px", xl: "235px" }}
+              rounded={"xl"}
+              mx={{ base: 3, md: 3, lg: 3, xl: 0 }}
+              width={"full"}
+              overflow={"hidden"}
+              borderRadius="xl"
+              bg={bg}
+              border={boxBorderColor}
+              borderColor="black"
             >
-              <Box
-                flex={1}
-                justify={"center"}
-                align={"center"}
-                height={{ base: "210px", md: "200px", lg: "80px", xl: "235px" }}
-                rounded={"xl"}
-                mx={{ base: 3, md: 3, lg: 3, xl: 0 }}
-                width={"full"}
-                overflow={"hidden"}
-                borderRadius="xl"
-                bg={bg}
-                border={boxBorderColor}
-                borderColor="black"
-              >
-                <Image
-                  src={image}
-                  boxSize={"230px"}
-                  alt="step"
-                  objectFit="contain"
-                />
-              </Box>
-            </Flex>
-          </motion.div>
+              <Image
+                src={image}
+                m={{ base: -4, md: 0 }}
+                boxSize={{ base: "240px", md: "230px" }}
+                alt="step"
+                objectFit="contain"
+              />
+            </Box>
+          </Flex>
         </Link>
       </motion.a>
     </>
@@ -211,6 +193,7 @@ const TechStak = ({ tags }) => {
       <SimpleGrid minChildWidth="120px" spacing="20px">
         {tags.map((tag, index) => (
           <Box
+            mx={2}
             bg={"blue.700"}
             border={boxBorderColor}
             rounded={"full"}

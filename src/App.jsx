@@ -1,13 +1,5 @@
-import {
-  Box,
-  Flex,
-  VStack,
-  Image,
-  useColorModeValue,
-  Container,
-  HStack,
-} from "@chakra-ui/react";
-import { Hero, Experience } from "./components";
+import { Box } from "@chakra-ui/react";
+import { Hero, Experience, Education, About } from "./components";
 function App() {
   return (
     <div className="App">
@@ -18,6 +10,8 @@ function App() {
       </Background>
 
       <Experience />
+      <Education />
+      <About />
     </div>
   );
 }
