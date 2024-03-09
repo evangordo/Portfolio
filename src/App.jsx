@@ -1,5 +1,6 @@
 import { Box } from "@chakra-ui/react";
 import { Hero, Experience, Education, About } from "./components";
+import "./App.css";
 function App() {
   return (
     <div className="App">
@@ -8,7 +9,6 @@ function App() {
           <Hero />
         </Box>
       </Background>
-
       <Experience />
       <Education />
       <About />
@@ -19,20 +19,5 @@ function App() {
 export default App;
 
 const Background = ({ children }) => {
-  return (
-    <Box
-      style={{
-        backgroundColor: "#1b2030",
-        opacity: 1,
-        backgroundImage: `
-          radial-gradient(#cfcfd3 1.8px, transparent 1.8px),
-          radial-gradient(#cfcfd3 1.8px, #1b2030 1.8px)
-        `,
-        backgroundSize: "72px 72px",
-        backgroundPosition: "0 0, 36px 36px",
-      }}
-    >
-      {children}
-    </Box>
-  );
+  return <Box className="background-color">{children}</Box>;
 };

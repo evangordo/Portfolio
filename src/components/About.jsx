@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import {
   Image,
   Box,
@@ -11,24 +11,91 @@ import {
   Link,
   UnorderedList,
   ListItem,
+  useBreakpointValue,
 } from "@chakra-ui/react";
+import { motion, useInView } from "framer-motion";
 
 const About = () => {
+  const isDesktop = useBreakpointValue({
+    base: false,
+    md: false,
+    lg: true,
+    xl: true,
+  });
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   return (
     <>
-      <Container maxW="7xl" mt={{ base: 12, md: "5rem" }} p={0}>
-        <Heading
-          mb={12}
-          textAlign={{ base: "center", md: "start" }}
-          size={{ base: "3xl", md: "4xl" }}
+      <section ref={ref}>
+        <span
+          style={{
+            transform: isInView ? "none" : "translateX(-200px)",
+            opacity: isInView ? 1 : 0,
+            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+          }}
         >
-          About
-        </Heading>
-        <Text>
-          {" "}
-          Im a recent graduate from Dublin, Ireland. My expertise lie within{" "}
-        </Text>
-      </Container>
+          <Container maxW="7xl" mt={{ base: 12, md: "5rem" }} p={0}>
+            <Heading
+              mx={{ base: 28, md: 0 }}
+              textAlign={{ base: "center", md: "start" }}
+              size={{ base: "3xl", md: "4xl" }}
+              as={"span"}
+              position={"relative"}
+              _after={{
+                content: "''",
+                width: "full",
+                height: "30%",
+                position: "absolute",
+                bottom: 1,
+                left: 0,
+                bg: "#292c4e",
+                zIndex: -1,
+              }}
+            >
+              About
+            </Heading>
+
+            <>
+              <br />
+              <br />
+              <br />
+            </>
+            <Container justifyContent={"start"} maxW="4xl">
+              <Box mx={2} w={{ base: 350, md: 800 }}>
+                <Text
+                  fontSize="2xl"
+                  textAlign={{ base: "center", md: "start" }}
+                >
+                  {" "}
+                  I'm a recent graduate from Dublin, Ireland, with expertise in
+                  frontend development, particularly in JavaScript and ReactJS.
+                  I have a strong desire to create visually appealing apps and
+                  webpages and in interested in working in both Web2 and Web3.
+                </Text>
+                <br />
+                <Text
+                  fontSize="2xl"
+                  textAlign={{ base: "center", md: "start" }}
+                >
+                  {" "}
+                  Beyond web development, I'm deeply passionate about sports and
+                  fitness, particularly Crossfit and tennis, with also a keen
+                  interest in rugby . Additionally, I enjoy film, music and
+                  travel.
+                </Text>
+
+                <Text
+                  fontSize="2xl"
+                  textAlign={{ base: "center", md: "start" }}
+                >
+                  {" "}
+                  Feel free to reach out with any queries you have, id love
+                </Text>
+              </Box>
+            </Container>
+          </Container>
+        </span>
+      </section>
     </>
   );
 };

@@ -21,6 +21,12 @@ import bordeaux from "../assets/bordeaux.png";
 import { motion, useInView } from "framer-motion";
 
 const Education = () => {
+  const isDesktop = useBreakpointValue({
+    base: false,
+    md: false,
+    lg: true,
+    xl: true,
+  });
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   return (
@@ -35,13 +41,31 @@ const Education = () => {
         >
           <Container maxW="7xl" mt={{ base: 12, md: "5rem" }} p={0}>
             <Heading
-              mb={12}
+              mx={{ base: 24, md: 0 }}
               textAlign={{ base: "center", md: "start" }}
               size={{ base: "3xl", md: "4xl" }}
+              as={"span"}
+              position={"relative"}
+              _after={{
+                content: "''",
+                width: "full",
+                height: "30%",
+                position: "absolute",
+                bottom: 1,
+                left: 0,
+                bg: "#292c4e",
+                zIndex: -1,
+              }}
             >
               Education
             </Heading>
-
+            {isDesktop ? (
+              <>
+                <br />
+                <br />
+                <br />
+              </>
+            ) : null}
             <Stack direction="column" spacing={{ base: "50px", md: "100px" }}>
               <School
                 image={dcu}

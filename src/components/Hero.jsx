@@ -3,10 +3,7 @@ import {
   Container,
   Stack,
   Flex,
-  Box,
   Heading,
-  Text,
-  Button,
   Image,
   useColorModeValue,
   SimpleGrid,
@@ -83,7 +80,7 @@ export default function About() {
               textAlign={{ base: "center", md: "start" }}
               size={{ base: "lg", lg: "lg" }}
             >
-              designing interesting aplications. Always improving and learning
+              creating interesting applications. Always improving and learning
               as I go on.
             </Heading>
             <Stack
@@ -138,8 +135,8 @@ export default function About() {
               mx={{ base: 2, lg: 0 }}
               borderColor="black"
               boxShadow={useColorModeValue(
-                "10px 10px 0 blue",
-                "10px 10px 0 blue"
+                "10px 5px 0 #292c4e",
+                "10px 5px 0 #292c4e"
               )}
               borderRadius="full"
               boxSize={{ base: "200px", lg: "280px" }}
