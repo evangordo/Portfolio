@@ -46,7 +46,7 @@ export default function About() {
         justify="center"
         as="h1"
         align="center"
-        h={"100vh"}
+        h={{ base: "84vh", md: "80hv" }}
         textAlign="center"
         gap={{ base: 4, lg: 16 }}
       >
@@ -124,6 +124,7 @@ export default function About() {
             </Stack>
           </Stack>
           <Flex
+            ml={{ base: 0, lg: 63 }}
             flex={1}
             justify={"center"}
             align={"center"}
@@ -139,7 +140,7 @@ export default function About() {
                 "10px 5px 0 #292c4e"
               )}
               borderRadius="full"
-              boxSize={{ base: "200px", lg: "280px" }}
+              boxSize={{ base: "200px", lg: "300px" }}
               src={Linkedin}
               alt="Evan"
             />
