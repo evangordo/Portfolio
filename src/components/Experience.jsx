@@ -193,14 +193,20 @@ const TechStack = ({ tags }) => {
         {tags.map((tag, index) => (
           <Box
             key={index}
-            mx={2}
+            mx={{ base: 4, md: 0 }}
             bg={"blue.700"}
             border={boxBorderColor}
             rounded={"full"}
             borderColor="white"
-            h={10}
+            h={{ base: "8", md: "10" }}
           >
-            <Text fontSize={"xl"} color={"white"} align="center" p={1} mb={7}>
+            <Text
+              fontSize={{ base: "md", md: "xl" }}
+              color={"white"}
+              align="center"
+              p={1}
+              mb={7}
+            >
               {tag}
             </Text>
           </Box>

@@ -92,7 +92,7 @@ export default function About() {
 
             <Heading
               textAlign={{ base: "center", md: "start" }}
-              size={{ base: "lg", lg: "lg" }}
+              size={{ base: "md", lg: "lg" }}
               mx={{ base: 4, lg: 0 }}
             >
               creating interesting applications. Always improving and learning

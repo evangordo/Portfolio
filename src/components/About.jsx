@@ -25,7 +25,7 @@ const About = () => {
               About
             </Heading>
             <Container justifyContent={{ base: "center", md: "start" }}>
-              <Box w={{ base: 350, md: 800 }}>
+              <Box>
                 <Text
                   mx={2}
                   fontSize={{ base: "lg", md: "2xl" }}
