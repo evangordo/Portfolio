@@ -25,10 +25,7 @@ const Contact = () => {
             >
               Contact
             </Heading>
-            <Container
-              justifyContent={{ base: "center", md: "start" }}
-              maxW="4xl"
-            >
+            <Container justifyContent={{ base: "center", md: "start" }}>
               <Box w={{ base: 350, md: 800 }}>
                 <Text
                   mx={2}

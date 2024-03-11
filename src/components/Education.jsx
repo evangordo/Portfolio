@@ -163,7 +163,7 @@ function Logo({ image, bg, link }) {
               align={"center"}
               height={{ base: "210px", md: "200px", lg: "80px", xl: "235px" }}
               rounded={"xl"}
-              mx={{ base: 3, md: 3, lg: 3, xl: 0 }}
+              mx={{ base: 12, md: 3, lg: 3, xl: 0 }}
               width={{ base: "100%", md: "300px" }}
               overflow={"hidden"}
               borderRadius="xl"

@@ -154,8 +154,8 @@ function Logo({ image, bg, link }) {
         <Link href={link} isExternal>
           <Flex
             flex={1}
-            justify={{ base: "right", md: "center" }}
-            align={{ base: "right", md: "center" }}
+            justify="center"
+            align="center"
             w={{ base: "full", md: "300px" }}
           >
             <Box
@@ -164,8 +164,7 @@ function Logo({ image, bg, link }) {
               align={"center"}
               height={{ base: "210px", md: "200px", lg: "80px", xl: "235px" }}
               rounded={"xl"}
-              mx={{ base: 3, md: 3, lg: 3, xl: 0 }}
-              width={"full"}
+              mx={{ base: 12, md: 3, lg: 3, xl: 0 }}
               overflow={"hidden"}
               borderRadius="xl"
               bg={bg}
@@ -174,6 +173,7 @@ function Logo({ image, bg, link }) {
             >
               <Image
                 src={image}
+                p={1}
                 m={{ base: -4, md: 0 }}
                 boxSize={{ base: "240px", md: "230px" }}
                 alt="step"

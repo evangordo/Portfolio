@@ -24,10 +24,7 @@ const About = () => {
             >
               About
             </Heading>
-            <Container
-              justifyContent={{ base: "center", md: "start" }}
-              maxW="4xl"
-            >
+            <Container justifyContent={{ base: "center", md: "start" }}>
               <Box w={{ base: 350, md: 800 }}>
                 <Text
                   mx={2}
@@ -35,7 +32,40 @@ const About = () => {
                   textAlign={{ base: "center", md: "start" }}
                 >
                   I'm a recent graduate from Dublin, Ireland, with expertise in
-                  frontend development, particularly in JavaScript and ReactJS.
+                  frontend development, particularly in{" "}
+                  <Text
+                    as={"span"}
+                    position={"relative"}
+                    _after={{
+                      content: "''",
+                      width: "full",
+                      height: "70%",
+                      position: "absolute",
+                      bottom: 1,
+                      left: 0,
+                      bg: "blue.400",
+                      zIndex: -1,
+                    }}
+                  >
+                    JavaScript
+                  </Text>{" "}
+                  and{" "}
+                  <Text
+                    as={"span"}
+                    position={"relative"}
+                    _after={{
+                      content: "''",
+                      width: "full",
+                      height: "70%",
+                      position: "absolute",
+                      bottom: 1,
+                      left: 0,
+                      bg: "blue.400",
+                      zIndex: -1,
+                    }}
+                  >
+                    ReactJS
+                  </Text>{" "}
                   I have a strong desire to create visually appealing apps and
                   webpages. As well, im interested working in both Web2 and
                   Web3.
@@ -47,10 +77,93 @@ const About = () => {
                   textAlign={{ base: "center", md: "start" }}
                 >
                   {" "}
-                  Beyond web development, I'm deeply passionate about sports and
-                  fitness, particularly rugby and tennis, with also a keen
-                  interest in Crossfit. Additionally, I enjoy film, music and
-                  travel.
+                  Beyond web development, I'm deeply passionate about{" "}
+                  <Text
+                    as={"span"}
+                    position={"relative"}
+                    _after={{
+                      content: "''",
+                      width: "full",
+                      height: "70%",
+                      position: "absolute",
+                      bottom: 1,
+                      left: 0,
+                      bg: "pink.400",
+                      zIndex: -1,
+                    }}
+                  >
+                    sports
+                  </Text>{" "}
+                  and{" "}
+                  <Text
+                    as={"span"}
+                    position={"relative"}
+                    _after={{
+                      content: "''",
+                      width: "full",
+                      height: "70%",
+                      position: "absolute",
+                      bottom: 1,
+                      left: 0,
+                      bg: "pink.400",
+                      zIndex: -1,
+                    }}
+                  >
+                    fitness
+                  </Text>
+                  , particularly rugby and tennis, with also a keen interest in
+                  Crossfit. Additionally, I enjoy{" "}
+                  <Text
+                    as={"span"}
+                    position={"relative"}
+                    _after={{
+                      content: "''",
+                      width: "full",
+                      height: "70%",
+                      position: "absolute",
+                      bottom: 1,
+                      left: 0,
+                      bg: "pink.400",
+                      zIndex: -1,
+                    }}
+                  >
+                    film
+                  </Text>
+                  ,{" "}
+                  <Text
+                    as={"span"}
+                    position={"relative"}
+                    _after={{
+                      content: "''",
+                      width: "full",
+                      height: "70%",
+                      position: "absolute",
+                      bottom: 1,
+                      left: 0,
+                      bg: "pink.400",
+                      zIndex: -1,
+                    }}
+                  >
+                    music
+                  </Text>{" "}
+                  and{" "}
+                  <Text
+                    as={"span"}
+                    position={"relative"}
+                    _after={{
+                      content: "''",
+                      width: "full",
+                      height: "70%",
+                      position: "absolute",
+                      bottom: 1,
+                      left: 0,
+                      bg: "pink.400",
+                      zIndex: -1,
+                    }}
+                  >
+                    travel
+                  </Text>
+                  .
                 </Text>
                 <br />
                 <Text
