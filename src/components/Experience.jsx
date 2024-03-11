@@ -83,8 +83,6 @@ const Experience = () => {
                   "Framer",
                   "Blockchain",
                   "Web3",
-
-                  ,
                 ]}
               />
 

@@ -6,7 +6,7 @@ import {
   Box,
   useBreakpointValue,
 } from "@chakra-ui/react";
-import { motion, useInView } from "framer-motion";
+import { useInView } from "framer-motion";
 
 const Contact = () => {
   const ref = useRef(null);

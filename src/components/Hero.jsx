@@ -7,7 +7,6 @@ import {
   Image,
   useColorModeValue,
   SimpleGrid,
-  Center,
   useBreakpointValue,
 } from "@chakra-ui/react";
 

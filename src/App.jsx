@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Box, Image as ChakraImage, Flex } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import {
   Navbar,
   Hero,

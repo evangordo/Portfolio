@@ -126,12 +126,7 @@ const Navbar = () => {
                       </Button>
                       <Divider />
                       <Button bg="">
-                        <a
-                          href={resume}
-                          target="_blank"
-                          isExternal
-                          rel="noopener noreferrer"
-                        >
+                        <a href={resume} isExternal>
                           <Text
                             _hover={{
                               color: "#292c4e",
@@ -203,7 +198,7 @@ const SocialIconLink = ({ image, alt, link, xLogo }) => {
   return (
     <>
       <motion.a whileHover={{ scale: 1.2 }}>
-        <a href={link} target="_blank">
+        <a href={link}>
           <Box
             borderRadius="md"
             borderBottom={"solid #fff 2px"}

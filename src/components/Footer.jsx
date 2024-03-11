@@ -70,7 +70,7 @@ export default Footer;
 const SocialIconLink = ({ image, alt, link, xLogo }) => {
   return (
     <motion.a whileHover={{ scale: 1.2 }}>
-      <a href={link} target="_blank">
+      <a href={link}>
         <Box
           borderRadius="md"
           borderBottom={"solid #fff 2px"}

@@ -1,16 +1,12 @@
 import React, { useRef } from "react";
 import {
-  Image,
   Box,
   Heading,
   Text,
-  SimpleGrid,
-  Flex,
-  Stack,
   Container,
   useBreakpointValue,
 } from "@chakra-ui/react";
-import { motion, useInView } from "framer-motion";
+import { useInView } from "framer-motion";
 
 const About = () => {
   const isDesktop = useBreakpointValue({
