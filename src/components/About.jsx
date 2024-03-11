@@ -24,7 +24,10 @@ const About = () => {
             >
               About
             </Heading>
-            <Container justifyContent={"start"} maxW="4xl">
+            <Container
+              justifyContent={{ base: "center", md: "start" }}
+              maxW="4xl"
+            >
               <Box w={{ base: 350, md: 800 }}>
                 <Text
                   mx={2}
