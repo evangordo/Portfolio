@@ -34,7 +34,7 @@ const Experience = () => {
             <Heading
               mb={8}
               textAlign={{ base: "center", md: "start" }}
-              size={{ base: "2xl", md: "3xl" }}
+              size={"3xl"}
               color="white"
             >
               Projects
@@ -200,7 +200,7 @@ const TechStack = ({ tags }) => {
             borderColor="white"
             h={10}
           >
-            <Text fontSize={20} color={"white"} align="center" p={1} mb={7}>
+            <Text fontSize={"xl"} color={"white"} align="center" p={1} mb={7}>
               {tag}
             </Text>
           </Box>

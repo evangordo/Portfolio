@@ -37,7 +37,7 @@ const Education = () => {
             <Heading
               mb={8}
               textAlign={{ base: "center", md: "start" }}
-              size={{ base: "2xl", md: "3xl" }}
+              size={"3xl"}
               color="white"
             >
               Education

@@ -20,7 +20,7 @@ const Contact = () => {
             <Heading
               mb={8}
               textAlign={{ base: "center", md: "start" }}
-              size={{ base: "2xl", md: "3xl" }}
+              size={"3xl"}
               color="white"
             >
               Contact
@@ -28,16 +28,16 @@ const Contact = () => {
             <Container justifyContent={"start"} maxW="4xl">
               <Box w={{ base: 350, md: 800 }}>
                 <Text
-                  mx={3}
-                  fontSize="2xl"
+                  mx={2}
+                  fontSize={{ base: "lg", md: "2xl" }}
                   textAlign={{ base: "center", md: "start" }}
                 >
                   Since you've made it this far, why not get in touch with me?!
                 </Text>
                 <br />
                 <Text
-                  mx={3}
-                  fontSize="2xl"
+                  mx={2}
+                  fontSize={{ base: "lg", md: "2xl" }}
                   _hover={{
                     color: "teal.500",
                   }}

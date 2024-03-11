@@ -19,7 +19,7 @@ const About = () => {
             <Heading
               mb={8}
               textAlign={{ base: "center", md: "start" }}
-              size={{ base: "2xl", md: "3xl" }}
+              size={"3xl"}
               color="white"
             >
               About
@@ -27,8 +27,8 @@ const About = () => {
             <Container justifyContent={"start"} maxW="4xl">
               <Box w={{ base: 350, md: 800 }}>
                 <Text
-                  mx={3}
-                  fontSize="2xl"
+                  mx={2}
+                  fontSize={{ base: "lg", md: "2xl" }}
                   textAlign={{ base: "center", md: "start" }}
                 >
                   I'm a recent graduate from Dublin, Ireland, with expertise in
@@ -39,8 +39,8 @@ const About = () => {
                 </Text>
                 <br />
                 <Text
-                  mx={3}
-                  fontSize="2xl"
+                  mx={2}
+                  fontSize={{ base: "lg", md: "2xl" }}
                   textAlign={{ base: "center", md: "start" }}
                 >
                   {" "}
@@ -52,7 +52,7 @@ const About = () => {
                 <br />
                 <Text
                   mx={3}
-                  fontSize="2xl"
+                  fontSize={{ base: "lg", md: "2xl" }}
                   textAlign={{ base: "center", md: "start" }}
                 >
                   {" "}
