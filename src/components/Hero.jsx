@@ -158,7 +158,7 @@ export default function About() {
               )}
               mr={{ base: 12, md: 0 }}
               borderRadius="md"
-              boxSize={{ base: "230px", lg: "300px" }}
+              boxSize={{ base: "210px", lg: "300px" }}
               src={Linkedin}
               alt="Evan"
             />

@@ -1,20 +1,8 @@
 import React, { useRef } from "react";
-import {
-  Box,
-  Heading,
-  Text,
-  Container,
-  useBreakpointValue,
-} from "@chakra-ui/react";
+import { Box, Heading, Text, Container } from "@chakra-ui/react";
 import { useInView } from "framer-motion";
 
 const About = () => {
-  const isDesktop = useBreakpointValue({
-    base: false,
-    md: false,
-    lg: true,
-    xl: true,
-  });
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   return (
@@ -29,31 +17,13 @@ const About = () => {
         >
           <Container maxW="7xl" mt={{ base: 12, md: "5rem" }} p={0}>
             <Heading
-              mx={{ base: 32, md: 0 }}
+              mb={8}
               textAlign={{ base: "center", md: "start" }}
-              size={{ base: "3xl", md: "4xl" }}
-              as={"span"}
-              position={"relative"}
-              _after={{
-                content: "''",
-                width: "full",
-                height: "30%",
-                position: "absolute",
-                bottom: 1,
-                left: 0,
-                bg: "#292c4e",
-                zIndex: -1,
-              }}
+              size={{ base: "2xl", md: "3xl" }}
+              color="white"
             >
               About
             </Heading>
-            {isDesktop ? (
-              <>
-                <br />
-                <br />
-                <br />
-              </>
-            ) : null}
             <Container justifyContent={"start"} maxW="4xl">
               <Box w={{ base: 350, md: 800 }}>
                 <Text
