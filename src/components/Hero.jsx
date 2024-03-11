@@ -7,6 +7,8 @@ import {
   Image,
   useColorModeValue,
   SimpleGrid,
+  Center,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 
 import Linkedin from "../assets/profile.png";
@@ -19,8 +21,15 @@ import Python from "../assets/python.png";
 import TailWind from "../assets/tailwindsvg.svg";
 import Figma from "../assets/figma.svg";
 import { motion } from "framer-motion";
+export const MotionImage = motion(Image);
 
 export default function About() {
+  const isDesktop = useBreakpointValue({
+    base: false,
+    md: false,
+    lg: true,
+    xl: true,
+  });
   const container = {
     hidden: { opacity: 1, scale: 0 },
     visible: {
@@ -46,7 +55,7 @@ export default function About() {
         justify="center"
         as="h1"
         align="center"
-        h={{ base: "84vh", md: "80hv" }}
+        h={{ base: "90vh", md: "100hv" }}
         textAlign="center"
         gap={{ base: 4, lg: 16 }}
       >
@@ -59,7 +68,13 @@ export default function About() {
               <Heading size={{ base: "3xl", lg: "4xl" }} textAlign="center">
                 Evan Gordon
               </Heading>
-              <Image src={Shamrock} alt="Evan" boxSize={{ base: 5, lg: 10 }} />
+              {isDesktop ? (
+                <Image
+                  src={Shamrock}
+                  alt="Evan"
+                  boxSize={{ base: 5, lg: 10 }}
+                />
+              ) : null}
             </Flex>
 
             <Heading
@@ -79,6 +94,7 @@ export default function About() {
             <Heading
               textAlign={{ base: "center", md: "start" }}
               size={{ base: "lg", lg: "lg" }}
+              mx={{ base: 4, lg: 0 }}
             >
               creating interesting applications. Always improving and learning
               as I go on.
@@ -124,23 +140,26 @@ export default function About() {
             </Stack>
           </Stack>
           <Flex
-            ml={{ base: 0, lg: 63 }}
             flex={1}
             justify={"center"}
             align={"center"}
             position={"relative"}
             w={"full"}
           >
-            <Image
+            <MotionImage
+              initial={{ y: "-1000", opacity: 0 }}
+              animate={{ opacity: 1, fontSize: "3rem", x: 20, y: 15 }}
+              transition={{ type: "spring", duration: 0.5, delay: 0.2 }}
               mt={{ base: 7, lg: 0 }}
-              mx={{ base: 2, lg: 0 }}
+              mx={{ base: 0, lg: 0 }}
               borderColor="black"
               boxShadow={useColorModeValue(
                 "10px 5px 0 #292c4e",
                 "10px 5px 0 #292c4e"
               )}
-              borderRadius="full"
-              boxSize={{ base: "200px", lg: "300px" }}
+              mr={{ base: 12, md: 0 }}
+              borderRadius="md"
+              boxSize={{ base: "230px", lg: "300px" }}
               src={Linkedin}
               alt="Evan"
             />

@@ -13,87 +13,166 @@ import {
   Divider,
   IconButton,
   HStack,
+  Button,
   Image as ChakraImage,
 } from "@chakra-ui/react";
 import githubLogo from "../assets/github_logo.svg";
+import resume from "../assets/Resume_2024.pdf";
 import linkedin from "../assets/linkedin.png";
+import { Link } from "react-scroll";
+import EG from "../assets/EG.svg";
+import { motion } from "framer-motion";
 
-import { HamburgerIcon } from "@chakra-ui/icons";
+import { HamburgerIcon, ExternalLinkIcon } from "@chakra-ui/icons";
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <>
-      <Box px={6}>
+      <Box
+        position={{ base: undefined, md: "fixed" }}
+        top={0}
+        left={0}
+        right={0}
+        zIndex={1000}
+        px={6}
+      >
         <Flex h={24} justifyContent={"space-between"}>
-          <Box></Box>
+          <Box p={4}>
+            <Link to="hero">
+              <ChakraImage src={EG} width="60px" height="60px" />
+            </Link>
+          </Box>
 
           <Flex alignItems={"center"}>
-            <IconButton
-              icon={<HamburgerIcon />}
-              aria-label="Open menu"
-              onClick={onOpen}
-              boxSize={45}
-              border={"blue"}
-            />
-            <Drawer onClose={onClose} isOpen={isOpen}>
-              <DrawerOverlay />
-              <DrawerContent>
-                <DrawerCloseButton />
-                <DrawerHeader></DrawerHeader>
-                <DrawerBody>
-                  <VStack onClick={onClose} gap={8} align="start">
-                    <Text
-                      fontSize={28}
-                      as="a"
-                      href="https://docs.rakeoff.io/welcome/new-to-icp"
-                      target="_blank"
-                      color={"white"}
-                      fontWeight={500}
-                    >
-                      Projects
-                    </Text>
-                    <Divider />
-                    <Text
-                      fontSize={28}
-                      as="a"
-                      href="https://analytics.rakeoff.io/"
-                      target="_blank"
-                      color={"white"}
-                      fontWeight={500}
-                    >
-                      Education
-                    </Text>
-                    <Divider />
+            <motion.a whileHover={{ scale: 1.2 }}>
+              <IconButton
+                icon={<HamburgerIcon />}
+                aria-label="Open menu"
+                onClick={onOpen}
+                boxSize={45}
+                border={"white"}
+                boxShadow="outline"
+              />
+              <Drawer onClose={onClose} isOpen={isOpen}>
+                <DrawerOverlay />
+                <DrawerContent>
+                  <DrawerCloseButton />
+                  <DrawerHeader></DrawerHeader>
+                  <DrawerBody>
+                    <VStack onClick={onClose} gap={8} align="start">
+                      <Button bg="">
+                        <Link
+                          to="experience"
+                          spy={true}
+                          smooth={true}
+                          duration={500}
+                          onClick={onClose}
+                        >
+                          <Text
+                            _hover={{
+                              color: "#292c4e",
+                            }}
+                            fontSize={24}
+                            color={"white"}
+                            fontWeight={700}
+                          >
+                            Projects
+                          </Text>
+                        </Link>
+                      </Button>
+                      <Divider />
+                      <Button bg="">
+                        <Link
+                          to="education"
+                          spy={true}
+                          smooth={true}
+                          duration={500}
+                          onClick={onClose}
+                        >
+                          <Text
+                            _hover={{
+                              color: "#292c4e",
+                            }}
+                            fontSize={24}
+                            color={"white"}
+                            fontWeight={700}
+                          >
+                            Education
+                          </Text>
+                        </Link>
+                      </Button>
+                      <Divider />
+                      <Button bg="">
+                        <Link
+                          to="about"
+                          spy={true}
+                          smooth={true}
+                          duration={500}
+                          onClick={onClose}
+                        >
+                          <Text
+                            _hover={{
+                              color: "#292c4e",
+                            }}
+                            fontSize={24}
+                            color={"white"}
+                            fontWeight={700}
+                          >
+                            About
+                          </Text>
+                        </Link>
+                      </Button>
+                      <Divider />
+                      <Button bg="">
+                        <a
+                          href={resume}
+                          target="_blank"
+                          isExternal
+                          rel="noopener noreferrer"
+                        >
+                          <Text
+                            _hover={{
+                              color: "#292c4e",
+                            }}
+                            fontSize={24}
+                            color={"white"}
+                            fontWeight={700}
+                          >
+                            Resume <ExternalLinkIcon mb={1} />
+                          </Text>
+                        </a>
+                      </Button>
+                      <Divider />
+                      <Button bg="">
+                        <Link
+                          to="contact"
+                          spy={true}
+                          smooth={true}
+                          duration={500}
+                          onClick={onClose}
+                        >
+                          <Text
+                            _hover={{
+                              color: "#292c4e",
+                            }}
+                            fontSize={24}
+                            color={"white"}
+                            fontWeight={700}
+                          >
+                            Contact
+                          </Text>
+                        </Link>
+                      </Button>
+                      <Divider />
 
-                    <Text
-                      fontSize={28}
-                      as="a"
-                      href="https://docs.rakeoff.io/welcome/frequently-asked-questions"
-                      target="_blank"
-                      color={"white"}
-                      fontWeight={500}
-                    >
-                      About
-                    </Text>
-                    <Divider />
-                    <Text
-                      fontSize={28}
-                      as="a"
-                      href="https://docs.rakeoff.io/welcome/frequently-asked-questions"
-                      target="_blank"
-                      color={"white"}
-                      fontWeight={500}
-                    >
-                      Contact
-                    </Text>
-                    <Divider />
-                    <SocialButtonList />
-                  </VStack>
-                </DrawerBody>
-              </DrawerContent>
-            </Drawer>
+                      <SocialButtonList />
+                    </VStack>
+                  </DrawerBody>
+                </DrawerContent>
+              </Drawer>
+            </motion.a>
           </Flex>
         </Flex>
       </Box>
@@ -122,22 +201,26 @@ const SocialButtonList = () => {
 
 const SocialIconLink = ({ image, alt, link, xLogo }) => {
   return (
-    <a href={link} target="_blank">
-      <Box
-        borderRadius="md"
-        borderBottom={"solid #fff 2px"}
-        py={0.5}
-        px={1}
-        _hover={{ opacity: "0.8", cursor: "pointer" }}
-      >
-        <ChakraImage
-          alt={alt}
-          src={image}
-          _hover={{ opacity: 0.8 }}
-          h="25px"
-          p={xLogo ? "3px" : 0}
-        />
-      </Box>
-    </a>
+    <>
+      <motion.a whileHover={{ scale: 1.2 }}>
+        <a href={link} target="_blank">
+          <Box
+            borderRadius="md"
+            borderBottom={"solid #fff 2px"}
+            py={0.5}
+            px={1}
+            _hover={{ opacity: "0.8", cursor: "pointer" }}
+          >
+            <ChakraImage
+              alt={alt}
+              src={image}
+              _hover={{ opacity: 0.8 }}
+              h="25px"
+              p={xLogo ? "3px" : 0}
+            />
+          </Box>
+        </a>
+      </motion.a>
+    </>
   );
 };

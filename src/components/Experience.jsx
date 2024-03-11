@@ -71,6 +71,7 @@ const Experience = () => {
                 description={[
                   `Built on the ICP blockchain in which we received a $25k developer grant.`,
                   `Designed the frontend using ReactJS and Chakra UI.`,
+                  `Utilised GraphQL and RestAPI for our analytics site.`,
                 ]}
                 bg={"purple.600"}
                 link={"https://rakeoff.io/"}
@@ -121,7 +122,7 @@ export const Project = ({ heading, description, image, bg, tags, link }) => {
         <Logo image={image} bg={bg} link={link} />
 
         <TextStep heading={heading} description={description} />
-        <TechStak tags={tags} />
+        <TechStack tags={tags} />
       </SimpleGrid>
     </>
   );
@@ -211,12 +212,13 @@ function Logo({ image, bg, link }) {
     </>
   );
 }
-const TechStak = ({ tags }) => {
+const TechStack = ({ tags }) => {
   return (
     <>
       <SimpleGrid minChildWidth="120px" spacing="20px">
         {tags.map((tag, index) => (
           <Box
+            key={index}
             mx={2}
             bg={"blue.700"}
             border={boxBorderColor}
@@ -224,14 +226,7 @@ const TechStak = ({ tags }) => {
             borderColor="white"
             h={10}
           >
-            <Text
-              fontSize={20}
-              color={"white"}
-              align="center"
-              p={1}
-              mb={7}
-              key={index}
-            >
+            <Text fontSize={20} color={"white"} align="center" p={1} mb={7}>
               {tag}
             </Text>
           </Box>
