@@ -45,7 +45,7 @@ const Education = () => {
             <Stack direction="column" spacing={{ base: "50px", md: "100px" }}>
               <School
                 image={dcu}
-                heading={"B.Sc, Enterprise Computing, 2019-2023"}
+                heading={"B.Sc, Computing & Business, 2019-2023"}
                 description={[
                   `Graduated with first class honours, ranking 3rd.`,
                   `Highest graded final-year project.`,
@@ -109,7 +109,7 @@ function TextStep({ heading, description }) {
         lineHeight={1.1}
         fontWeight={600}
         fontSize={{ base: "3xl", md: "2xl", lg: "4xl", xl: "5xl" }}
-        mx={{ base: 2, md: 0 }}
+        mx={{ base: 12, md: 0 }}
       >
         <Text
           textAlign={{
@@ -134,6 +134,7 @@ function TextStep({ heading, description }) {
         color={"gray.100"}
         fontSize={{ base: "lg", md: "lg", lg: "xl" }}
         mt={{ base: 4, md: 2 }}
+        mx={{ base: 7, md: 0 }}
       >
         <UnorderedList>
           {description.map((point, index) => (

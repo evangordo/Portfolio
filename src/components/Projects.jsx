@@ -11,13 +11,14 @@ import {
   Link,
   UnorderedList,
   ListItem,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import { boxBorderColor } from "../tools/colors";
 import Rakeoff from "../assets/rakeoff.png";
 import jobon from "../assets/jobon.png";
 import { motion, useInView } from "framer-motion";
 
-const Experience = () => {
+const Projects = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   return (
@@ -87,7 +88,7 @@ const Experience = () => {
     </>
   );
 };
-export default Experience;
+export default Projects;
 
 export const Project = ({ heading, description, image, bg, tags, link }) => {
   return (
@@ -134,6 +135,7 @@ function TextStep({ heading, description }) {
         color={"gray.100"}
         fontSize={{ base: "lg", md: "lg", lg: "xl" }}
         mt={{ base: 4, md: 2 }}
+        mx={{ base: 7, md: 0 }}
       >
         <UnorderedList>
           {description.map((point, index) => (
@@ -187,13 +189,23 @@ function Logo({ image, bg, link }) {
   );
 }
 const TechStack = ({ tags }) => {
+  const isDesktop = useBreakpointValue({
+    base: false,
+    md: false,
+    lg: true,
+    xl: true,
+  });
   return (
     <>
-      <SimpleGrid minChildWidth="120px" spacing="20px">
+      <SimpleGrid
+        //had base but still threw off mobile so using breakpoint
+        minChildWidth={isDesktop ? "120px" : null}
+        spacing={"20px"}
+      >
         {tags.map((tag, index) => (
           <Box
             key={index}
-            mx={{ base: 4, md: 0 }}
+            mx={{ base: 12, md: 0 }}
             bg={"blue.700"}
             border={boxBorderColor}
             rounded={"full"}
@@ -201,7 +213,7 @@ const TechStack = ({ tags }) => {
             h={{ base: "8", md: "10" }}
           >
             <Text
-              fontSize={{ base: "md", md: "xl" }}
+              fontSize={{ base: "lg", md: "xl" }}
               color={"white"}
               align="center"
               p={1}

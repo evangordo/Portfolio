@@ -64,7 +64,7 @@ const Navbar = () => {
                     <VStack onClick={onClose} gap={8} align="start">
                       <Button bg="">
                         <Link
-                          to="experience"
+                          to="projects"
                           spy={true}
                           smooth={true}
                           duration={500}

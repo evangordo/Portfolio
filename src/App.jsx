@@ -3,7 +3,7 @@ import { Box, Flex } from "@chakra-ui/react";
 import {
   Navbar,
   Hero,
-  Experience,
+  Projects,
   Education,
   About,
   Contact,
@@ -44,8 +44,8 @@ function App() {
             </Box>
           </Background>
 
-          <Box id="experience">
-            <Experience />
+          <Box id="projects">
+            <Projects />
           </Box>
           <Box id="education">
             <Education />

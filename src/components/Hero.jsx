@@ -77,7 +77,7 @@ export default function About() {
             </Flex>
 
             <Heading
-              mx={{ base: 8, lg: 0 }}
+              mx={{ base: 6, lg: 0 }}
               textAlign={{ base: "center", sm: "start", md: "start" }}
               size={{ base: "xl", sm: "xl", lg: "3xl" }}
               _hover={{ textDecoration: "underline" }}
@@ -93,7 +93,7 @@ export default function About() {
             <Heading
               textAlign={{ base: "center", md: "start" }}
               size={{ base: "md", lg: "lg" }}
-              mx={{ base: 4, lg: 0 }}
+              mx={{ base: 9, lg: 0 }}
             >
               creating interesting applications. Always improving and learning
               as I go on.
@@ -148,7 +148,7 @@ export default function About() {
             <MotionImage
               initial={{ y: "-1000", opacity: 0 }}
               animate={{ opacity: 1, fontSize: "3rem", x: 20, y: 15 }}
-              transition={{ type: "spring", duration: 0.5, delay: 0.2 }}
+              transition={{ type: "spring", duration: 0.3, delay: 0.2 }}
               mt={{ base: 7, lg: 0 }}
               mx={{ base: 0, lg: 0 }}
               borderColor="black"
@@ -158,7 +158,7 @@ export default function About() {
               )}
               mr={{ base: 12, md: 0 }}
               borderRadius="md"
-              boxSize={{ base: "210px", lg: "300px" }}
+              boxSize={{ base: "220px", lg: "290px" }}
               src={Linkedin}
               alt="Evan"
             />
