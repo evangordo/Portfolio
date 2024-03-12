@@ -145,8 +145,8 @@ const About = () => {
                     }}
                   >
                     music
-                  </Text>{" "}
-                  and{" "}
+                  </Text>
+                  , and{" "}
                   <Text
                     as={"span"}
                     position={"relative"}

@@ -95,8 +95,7 @@ export default function About() {
               size={{ base: "md", lg: "lg" }}
               mx={{ base: 9, lg: 0 }}
             >
-              creating interesting applications. Always improving and learning
-              as I go on.
+              building things for the web. Improving and learning as I go on.
             </Heading>
             <Stack
               align="center"
