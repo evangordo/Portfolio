@@ -216,7 +216,7 @@ const TechStack = ({ tags }) => {
               fontSize={{ base: "lg", md: "xl" }}
               color={"white"}
               align="center"
-              p={1}
+              p={{ base: -1, md: 1 }}
               mb={7}
             >
               {tag}

@@ -1,6 +1,8 @@
 .background-color{
     background-color: #1b2030;
     opacity: 1;
-    background: radial-gradient(circle, transparent 20%, #1b2030 20%, #1b2030 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #1b2030 20%, #1b2030 80%, transparent 80%, transparent) 100px 100px, linear-gradient(#292c4e 8px, transparent 8px) 0 -4px, linear-gradient(90deg, #292c4e 8px, #1b2030 8px) -4px 0;
-    background-size: 200px 200px, 200px 200px, 100px 100px, 100px 100px;
+    background-image:  linear-gradient(135deg, #292c4e 25%, transparent 25%), linear-gradient(225deg, #292c4e 25%, transparent 25%), linear-gradient(45deg, #292c4e 25%, transparent 25%), linear-gradient(315deg, #292c4e 25%, #1b2030 25%);
+    background-position:  36px 0, 36px 0, 0 0, 0 0;
+    background-size: 36px 36px;
+    background-repeat: repeat;
 };
