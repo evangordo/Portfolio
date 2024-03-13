@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Box, Flex } from "@chakra-ui/react";
+import { Box, Flex, useColorMode } from "@chakra-ui/react";
 import {
   Navbar,
   Hero,
@@ -13,6 +13,7 @@ import "./App.css";
 import EG from "./assets/EG.svg";
 
 import { motion } from "framer-motion";
+
 const svgVariants = {
   hidden: {
     pathLength: 0,
@@ -23,6 +24,7 @@ const svgVariants = {
   },
 };
 function App() {
+  const { colorMode } = useColorMode();
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
@@ -37,7 +39,7 @@ function App() {
     <div className="App">
       {loaded ? (
         <>
-          <Background>
+          <Background colorMode={colorMode}>
             <Navbar />
             <Box id="hero" height="100vh">
               <Hero />
@@ -57,7 +59,7 @@ function App() {
             <Contact />
           </Box>
 
-          <Background>
+          <Background colorMode={colorMode}>
             <Footer />
           </Background>
         </>
@@ -87,6 +89,24 @@ function App() {
 
 export default App;
 
-const Background = ({ children }) => {
-  return <Box className="background-color">{children}</Box>;
+const Background = ({ children, colorMode }) => {
+  const backgroundColor = colorMode === "dark" ? "#1b2030" : "#d1d2d5";
+  const backgroundImage =
+    colorMode === "dark"
+      ? "linear-gradient(135deg, #292c4e 25%, transparent 25%), linear-gradient(225deg, #292c4e 25%, transparent 25%), linear-gradient(45deg, #292c4e 25%, transparent 25%), linear-gradient(315deg, #292c4e 25%, #1b2030 25%)"
+      : "linear-gradient(135deg, #f2f2f4 25%, transparent 25%), linear-gradient(225deg, #f2f2f4 25%, transparent 25%), linear-gradient(45deg, #f2f2f4 25%, transparent 25%), linear-gradient(315deg, #f2f2f4 25%, #d1d2d5 25%)";
+
+  return (
+    <Box
+      className="background-color"
+      bg={backgroundColor}
+      opacity={1}
+      backgroundImage={backgroundImage}
+      backgroundPosition="40px 0, 40px 0, 0 0, 0 0"
+      backgroundSize="40px 40px"
+      backgroundRepeat="repeat"
+    >
+      {children}
+    </Box>
+  );
 };

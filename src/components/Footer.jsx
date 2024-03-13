@@ -3,6 +3,7 @@ import {
   Box,
   Container,
   HStack,
+  useColorMode,
   Image as ChakraImage,
   Flex,
   Stack,
@@ -15,6 +16,8 @@ import { motion } from "framer-motion";
 import linkedin from "./../assets/linkedin.png";
 
 const Footer = () => {
+  const { colorMode } = useColorMode();
+
   return (
     <Container maxW="9xl" mt={{ base: 12, md: "5rem" }} p={0}>
       <Box mt={{ base: 12, md: "5rem" }}>
@@ -39,7 +42,9 @@ const Footer = () => {
           <Text
             ml={2}
             align={{ base: "center", md: "center" }}
-            color="white"
+            color={
+              colorMode === "light" ? "solid #e2e8f0 2px" : "solid #363b4c 2px"
+            }
             fontSize="xl"
             _hover={{
               color: "teal.500",
@@ -67,23 +72,26 @@ const Footer = () => {
 
 export default Footer;
 
-const SocialIconLink = ({ image, alt, link, xLogo }) => {
+const SocialIconLink = ({ image, alt, link }) => {
+  const { colorMode } = useColorMode();
   return (
     <motion.a whileHover={{ scale: 1.2 }}>
       <a href={link}>
         <Box
           borderRadius="md"
-          borderBottom={"solid #fff 2px"}
+          borderBottom={
+            colorMode === "dark" ? "solid #e2e8f0 2px" : "solid #363b4c 2px"
+          }
           py={0.5}
           px={1}
           _hover={{ opacity: "0.8", cursor: "pointer" }}
+          bg={colorMode === "dark" ? null : " #2d3748 2px"}
         >
           <ChakraImage
             alt={alt}
             src={image}
             _hover={{ opacity: 0.8 }}
             h="25px"
-            p={xLogo ? "3px" : 0}
           />
         </Box>
       </a>

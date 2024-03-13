@@ -12,6 +12,7 @@ import {
   UnorderedList,
   ListItem,
   Stack,
+  useColorMode,
   useBreakpointValue,
 } from "@chakra-ui/react";
 import { boxBorderColor } from "../tools/colors";
@@ -21,6 +22,9 @@ import bordeaux from "../assets/bordeaux.png";
 import { motion, useInView } from "framer-motion";
 
 const Education = () => {
+  const { colorMode } = useColorMode();
+  const bgColor = colorMode === "light" ? "#5455c2" : "#292c4e";
+
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   return (
@@ -38,16 +42,20 @@ const Education = () => {
               mb={8}
               textAlign={{ base: "center", md: "start" }}
               size={"3xl"}
-              color="white"
+              color={
+                colorMode === "light"
+                  ? "solid #e2e8f0 2px"
+                  : "solid #363b4c 2px"
+              }
               position={"relative"}
               _after={{
                 content: "''",
-                width: "full",
+                width: useBreakpointValue({ base: "100%", md: "22%" }),
                 height: useBreakpointValue({ base: "30%", md: "30%" }),
                 position: "absolute",
                 bottom: 1,
                 left: 0,
-                bg: "#292c4e ",
+                bg: bgColor,
                 zIndex: -1,
               }}
             >
@@ -114,6 +122,8 @@ export const School = ({ heading, description, image, bg, link }) => {
 };
 
 function TextStep({ heading, description }) {
+  const { colorMode } = useColorMode();
+
   return (
     <div>
       <Heading
@@ -142,10 +152,12 @@ function TextStep({ heading, description }) {
           lg: "center",
           xl: "start",
         }}
-        color={"gray.100"}
         fontSize={{ base: "lg", md: "lg", lg: "xl" }}
         mt={{ base: 4, md: 2 }}
         mx={{ base: 7, md: 0 }}
+        color={
+          colorMode === "light" ? "solid #e2e8f0 2px" : "solid #363b4c 2px"
+        }
       >
         <UnorderedList>
           {description.map((point, index) => (
@@ -184,6 +196,7 @@ function Logo({ image, bg, link }) {
               borderColor="black"
             >
               <Image
+                _autofill="red"
                 src={image}
                 mt={{ base: 0, md: 2 }}
                 boxSize={{ base: "220px", md: "230px" }}

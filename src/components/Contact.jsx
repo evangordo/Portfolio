@@ -5,12 +5,16 @@ import {
   Text,
   Box,
   useBreakpointValue,
+  useColorMode,
 } from "@chakra-ui/react";
 import { useInView } from "framer-motion";
 
 const Contact = () => {
+  const { colorMode } = useColorMode();
+
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+  const bgColor = colorMode === "light" ? "#5455c2" : "#292c4e";
 
   return (
     <>
@@ -27,18 +31,22 @@ const Contact = () => {
               position={"relative"}
               _after={{
                 content: "''",
-                width: "full",
+                width: useBreakpointValue({ base: "100%", md: "18%" }),
                 height: useBreakpointValue({ base: "30%", md: "30%" }),
                 position: "absolute",
                 bottom: 1,
                 left: 0,
-                bg: "#292c4e ",
+                bg: bgColor,
                 zIndex: -1,
               }}
               mb={8}
               textAlign={{ base: "center", md: "start" }}
               size={"3xl"}
-              color="white"
+              color={
+                colorMode === "light"
+                  ? "solid #e2e8f0 2px"
+                  : "solid #363b4c 2px"
+              }
             >
               Contact
             </Heading>

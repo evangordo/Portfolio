@@ -8,6 +8,7 @@ import {
   useColorModeValue,
   SimpleGrid,
   useBreakpointValue,
+  useColorMode,
 } from "@chakra-ui/react";
 
 import Linkedin from "../assets/profile.png";
@@ -23,6 +24,8 @@ import { motion } from "framer-motion";
 export const MotionImage = motion(Image);
 
 export default function About() {
+  const { colorMode } = useColorMode();
+  const bgColor = colorMode === "light" ? "#1a202d " : "#ebebf1";
   const isDesktop = useBreakpointValue({
     base: false,
     md: false,
@@ -82,10 +85,9 @@ export default function About() {
               textAlign={{ base: "center", sm: "start", md: "start" }}
               size={{ base: "xl", sm: "xl", lg: "3xl" }}
               _hover={{ textDecoration: "underline" }}
-              _dark={{ color: "blue.700" }}
               style={{
                 textShadow:
-                  "0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px blue, 0 0 30px blue, 0 0 40px blue, 0 0 55px blue, 0 0 75px blue",
+                  "0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px blue, 0 0 30px blue, 0 0 40px white, 0 0 55px white, 0 0 75px white",
               }}
             >
               Frontend Developer
@@ -154,12 +156,12 @@ export default function About() {
               mx={{ base: 0, lg: 0 }}
               borderColor="black"
               boxShadow={useColorModeValue(
-                "10px 5px 0 #292c4e",
-                "10px 5px 0 #292c4e"
+                `10px 5px 0 ${bgColor}`,
+                `10px 5px 0${bgColor}`
               )}
               mr={{ base: 12, md: 0 }}
               borderRadius="md"
-              boxSize={{ base: "220px", lg: "290px" }}
+              boxSize={{ base: "220px", lg: "287px" }}
               src={Linkedin}
               alt="Evan"
             />

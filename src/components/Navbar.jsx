@@ -14,6 +14,7 @@ import {
   IconButton,
   HStack,
   Button,
+  useColorMode,
   Image as ChakraImage,
 } from "@chakra-ui/react";
 import githubLogo from "../assets/github_logo.svg";
@@ -22,10 +23,12 @@ import linkedin from "../assets/linkedin.png";
 import { Link } from "react-scroll";
 import EG from "../assets/EG.svg";
 import { motion } from "framer-motion";
+import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 
 import { HamburgerIcon, ExternalLinkIcon } from "@chakra-ui/icons";
 
 const Navbar = () => {
+  const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
@@ -46,6 +49,9 @@ const Navbar = () => {
           </Box>
 
           <Flex alignItems={"center"}>
+            <Button onClick={toggleColorMode} boxSize={45} m={4}>
+              {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+            </Button>
             <motion.a whileHover={{ scale: 1.2 }}>
               <IconButton
                 icon={<HamburgerIcon />}
@@ -53,7 +59,6 @@ const Navbar = () => {
                 onClick={onOpen}
                 boxSize={45}
                 border={"white"}
-                boxShadow="outline"
               />
               <Drawer onClose={onClose} isOpen={isOpen}>
                 <DrawerOverlay />
@@ -75,7 +80,11 @@ const Navbar = () => {
                               color: "#292c4e",
                             }}
                             fontSize={24}
-                            color={"white"}
+                            color={
+                              colorMode === "dark"
+                                ? "solid #e2e8f0 2px"
+                                : "solid #363b4c 2px"
+                            }
                             fontWeight={700}
                           >
                             Projects
@@ -96,7 +105,11 @@ const Navbar = () => {
                               color: "#292c4e",
                             }}
                             fontSize={24}
-                            color={"white"}
+                            color={
+                              colorMode === "dark"
+                                ? "solid #e2e8f0 2px"
+                                : "solid #363b4c 2px"
+                            }
                             fontWeight={700}
                           >
                             Education
@@ -117,7 +130,11 @@ const Navbar = () => {
                               color: "#292c4e",
                             }}
                             fontSize={24}
-                            color={"white"}
+                            color={
+                              colorMode === "dark"
+                                ? "solid #e2e8f0 2px"
+                                : "solid #363b4c 2px"
+                            }
                             fontWeight={700}
                           >
                             About
@@ -132,7 +149,11 @@ const Navbar = () => {
                               color: "#292c4e",
                             }}
                             fontSize={24}
-                            color={"white"}
+                            color={
+                              colorMode === "dark"
+                                ? "solid #e2e8f0 2px"
+                                : "solid #363b4c 2px"
+                            }
                             fontWeight={700}
                           >
                             Resume <ExternalLinkIcon mb={1} />
@@ -153,7 +174,11 @@ const Navbar = () => {
                               color: "#292c4e",
                             }}
                             fontSize={24}
-                            color={"white"}
+                            color={
+                              colorMode === "dark"
+                                ? "solid #e2e8f0 2px"
+                                : "solid #363b4c 2px"
+                            }
                             fontWeight={700}
                           >
                             Contact
@@ -193,25 +218,27 @@ const SocialButtonList = () => {
     </HStack>
   );
 };
-
-const SocialIconLink = ({ image, alt, link, xLogo }) => {
+const SocialIconLink = ({ image, alt, link }) => {
+  const { colorMode } = useColorMode();
   return (
     <>
       <motion.a whileHover={{ scale: 1.2 }}>
         <a href={link}>
           <Box
             borderRadius="md"
-            borderBottom={"solid #fff 2px"}
+            borderBottom={
+              colorMode === "dark" ? "solid #e2e8f0 2px" : "solid #363b4c 2px"
+            }
             py={0.5}
             px={1}
             _hover={{ opacity: "0.8", cursor: "pointer" }}
+            bg={"#2d3748 "}
           >
             <ChakraImage
               alt={alt}
               src={image}
               _hover={{ opacity: 0.8 }}
               h="25px"
-              p={xLogo ? "3px" : 0}
             />
           </Box>
         </a>

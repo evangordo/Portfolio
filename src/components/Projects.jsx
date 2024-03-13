@@ -12,6 +12,7 @@ import {
   UnorderedList,
   ListItem,
   useBreakpointValue,
+  useColorMode,
 } from "@chakra-ui/react";
 import { boxBorderColor } from "../tools/colors";
 import Rakeoff from "../assets/rakeoff.png";
@@ -19,6 +20,9 @@ import jobon from "../assets/jobon.png";
 import { motion, useInView } from "framer-motion";
 
 const Projects = () => {
+  const { colorMode } = useColorMode();
+  const bgColor = colorMode === "light" ? "#5455c2" : "#292c4e";
+
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   return (
@@ -36,18 +40,22 @@ const Projects = () => {
               position={"relative"}
               _after={{
                 content: "''",
-                width: "full",
+                width: useBreakpointValue({ base: "100%", md: "18%" }),
                 height: useBreakpointValue({ base: "30%", md: "30%" }),
                 position: "absolute",
                 bottom: 1,
                 left: 0,
-                bg: "#292c4e ",
+                bg: bgColor,
                 zIndex: -1,
               }}
               mb={8}
               textAlign={{ base: "center", md: "start" }}
               size={"3xl"}
-              color="white"
+              color={
+                colorMode === "light"
+                  ? "solid #e2e8f0 2px"
+                  : "solid #363b4c 2px"
+              }
             >
               Projects
             </Heading>
@@ -115,6 +123,8 @@ export const Project = ({ heading, description, image, bg, tags, link }) => {
 };
 
 function TextStep({ heading, description }) {
+  const { colorMode } = useColorMode();
+
   return (
     <div>
       <Heading
@@ -143,7 +153,9 @@ function TextStep({ heading, description }) {
           lg: "center",
           xl: "start",
         }}
-        color={"gray.100"}
+        color={
+          colorMode === "light" ? "solid #e2e8f0 2px" : "solid #363b4c 2px"
+        }
         fontSize={{ base: "lg", md: "lg", lg: "xl" }}
         mt={{ base: 4, md: 2 }}
         mx={{ base: 7, md: 0 }}
@@ -200,6 +212,8 @@ function Logo({ image, bg, link }) {
   );
 }
 const TechStack = ({ tags }) => {
+  const { colorMode } = useColorMode();
+
   const isDesktop = useBreakpointValue({
     base: false,
     md: false,
@@ -217,10 +231,12 @@ const TechStack = ({ tags }) => {
           <Box
             key={index}
             mx={{ base: 12, md: 0 }}
-            bg={"blue.700"}
+            bg={"#5455c1"}
             border={boxBorderColor}
             rounded={"full"}
-            borderColor="white"
+            borderColor={
+              colorMode === "light" ? "solid #e2e8f0 2px" : "solid #363b4c 2px"
+            }
             h={{ base: "8", md: "10" }}
           >
             <Text
