@@ -92,7 +92,7 @@ export default function About() {
               textAlign={{ base: "center", md: "start" }}
               size={{ base: "md", lg: "lg" }}
               mx={{ base: 9, lg: 0 }}
-              color={"grey"}
+              color={colorMode === "light" ? "#1a202d " : "grey"}
             >
               building things for the web. Improving and learning as I go on.
             </Heading>
