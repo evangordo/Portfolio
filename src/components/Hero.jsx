@@ -157,7 +157,8 @@ export default function About() {
               )}
               mr={{ base: 12, md: 0 }}
               borderRadius="md"
-              boxSize={{ base: "220px", lg: "280px" }}
+              filter="grayscale(100%)"
+              boxSize={{ base: "220px", lg: "250px" }}
               src={Linkedin}
               alt="Evan"
             />
