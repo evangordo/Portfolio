@@ -50,7 +50,7 @@ const Education = () => {
               position={"relative"}
               _after={{
                 content: "''",
-                width: useBreakpointValue({ base: "100%", md: "22%" }),
+                width: useBreakpointValue({ base: "0%", md: "22%" }),
                 height: useBreakpointValue({ base: "30%", md: "30%" }),
                 position: "absolute",
                 bottom: 1,

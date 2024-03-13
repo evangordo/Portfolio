@@ -60,13 +60,12 @@ export default function About() {
         align="center"
         h={{ base: "90vh", md: "100hv" }}
         textAlign="center"
-        gap={{ base: 4, lg: 16 }}
       >
         <Stack
-          py={{ base: 20, md: 120 }}
+          py={{ base: 20, md: 10 }}
           direction={{ base: "column", md: "row" }}
         >
-          <Stack flex={1} spacing={{ base: 5, md: 5 }}>
+          <Stack flex={1} spacing={{ base: 5, md: 2 }}>
             <Flex justify={{ base: "center", md: "start" }}>
               <Heading size={{ base: "3xl", lg: "4xl" }} textAlign="center">
                 Evan Gordon
@@ -85,10 +84,6 @@ export default function About() {
               textAlign={{ base: "center", sm: "start", md: "start" }}
               size={{ base: "xl", sm: "xl", lg: "3xl" }}
               _hover={{ textDecoration: "underline" }}
-              style={{
-                textShadow:
-                  "0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px blue, 0 0 30px blue, 0 0 40px white, 0 0 55px white, 0 0 75px white",
-              }}
             >
               Frontend Developer
             </Heading>
@@ -97,6 +92,7 @@ export default function About() {
               textAlign={{ base: "center", md: "start" }}
               size={{ base: "md", lg: "lg" }}
               mx={{ base: 9, lg: 0 }}
+              color={"grey"}
             >
               building things for the web. Improving and learning as I go on.
             </Heading>
@@ -161,7 +157,7 @@ export default function About() {
               )}
               mr={{ base: 12, md: 0 }}
               borderRadius="md"
-              boxSize={{ base: "220px", lg: "287px" }}
+              boxSize={{ base: "220px", lg: "280px" }}
               src={Linkedin}
               alt="Evan"
             />
