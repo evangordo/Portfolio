@@ -39,6 +39,17 @@ const Education = () => {
               textAlign={{ base: "center", md: "start" }}
               size={"3xl"}
               color="white"
+              position={"relative"}
+              _after={{
+                content: "''",
+                width: "full",
+                height: useBreakpointValue({ base: "30%", md: "30%" }),
+                position: "absolute",
+                bottom: 1,
+                left: 0,
+                bg: "#292c4e ",
+                zIndex: -1,
+              }}
             >
               Education
             </Heading>

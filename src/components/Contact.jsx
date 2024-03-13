@@ -1,5 +1,11 @@
 import React, { useRef } from "react";
-import { Container, Heading, Text, Box } from "@chakra-ui/react";
+import {
+  Container,
+  Heading,
+  Text,
+  Box,
+  useBreakpointValue,
+} from "@chakra-ui/react";
 import { useInView } from "framer-motion";
 
 const Contact = () => {
@@ -18,6 +24,17 @@ const Contact = () => {
         >
           <Container maxW={"7xl"} mt={{ base: 12, md: "5rem" }} p={0}>
             <Heading
+              position={"relative"}
+              _after={{
+                content: "''",
+                width: "full",
+                height: useBreakpointValue({ base: "30%", md: "30%" }),
+                position: "absolute",
+                bottom: 1,
+                left: 0,
+                bg: "#292c4e ",
+                zIndex: -1,
+              }}
               mb={8}
               textAlign={{ base: "center", md: "start" }}
               size={"3xl"}

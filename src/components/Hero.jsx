@@ -29,6 +29,7 @@ export default function About() {
     lg: true,
     xl: true,
   });
+
   const container = {
     hidden: { opacity: 1, scale: 0 },
     visible: {
@@ -97,6 +98,7 @@ export default function About() {
             >
               building things for the web. Improving and learning as I go on.
             </Heading>
+
             <Stack
               align="center"
               spacing={{ base: 4, sm: 6 }}
