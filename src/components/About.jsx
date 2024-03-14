@@ -79,7 +79,7 @@ const About = () => {
                     fontSize={{ base: "lg", md: "lg", xl: "2xl" }}
                     textAlign={{ base: "center", md: "start" }}
                   >
-                    I'm a recent graduate from Dublin, Ireland, with expertise
+                    I am a recent graduate from Dublin, Ireland, with expertise
                     in frontend development, particularly in{" "}
                     <Text
                       as={"span"}
@@ -115,10 +115,10 @@ const About = () => {
                       }}
                     >
                       ReactJS
-                    </Text>{" "}
-                    I have a strong desire to create visually appealing apps and
-                    webpages. As well, im interested working in both Web2 and
-                    Web3.
+                    </Text>
+                    . I have a strong desire to create visually appealing apps
+                    and webpages. As well, I'm interested working in both Web2
+                    and Web3.
                   </Text>
                   <br />
                   <Text

@@ -69,7 +69,7 @@ const Projects = () => {
                   bg={"purple.600"}
                   link={"https://rakeoff.io/"}
                   tags={[
-                    "React.JS",
+                    "ReactJS",
                     "JavaScript",
                     "Chakra UI",
                     "GraphQL",
