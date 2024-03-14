@@ -1,20 +1,11 @@
 import React, { useRef } from "react";
-import {
-  Container,
-  Heading,
-  Text,
-  Box,
-  useBreakpointValue,
-  useColorMode,
-} from "@chakra-ui/react";
+import { Container, Heading, Text, Box, useColorMode } from "@chakra-ui/react";
 import { useInView } from "framer-motion";
-
 const Contact = () => {
   const { colorMode } = useColorMode();
 
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-  const bgColor = colorMode === "light" ? "#5455c2" : "#292c4e";
 
   return (
     <>
@@ -28,18 +19,8 @@ const Contact = () => {
         >
           <Container maxW={"7xl"} mt={{ base: 12, md: "5rem" }} p={0}>
             <Heading
-              position={"relative"}
-              _after={{
-                content: "''",
-                width: useBreakpointValue({ base: "0%", md: "18%" }),
-                height: useBreakpointValue({ base: "30%", md: "30%" }),
-                position: "absolute",
-                bottom: 1,
-                left: 0,
-                bg: bgColor,
-                zIndex: -1,
-              }}
               mb={8}
+              mx={{ base: 0, md: 4, lg: 4, xl: 0 }}
               textAlign={{ base: "center", md: "start" }}
               size={"3xl"}
               color={

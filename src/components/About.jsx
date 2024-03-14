@@ -8,12 +8,19 @@ import {
   useColorMode,
 } from "@chakra-ui/react";
 import { useInView } from "framer-motion";
-
+import "../App.css";
 import { Icon } from "@chakra-ui/react";
 
 const About = () => {
+  const isDesktop = useBreakpointValue({
+    base: false,
+    md: false,
+    lg: false,
+    xl: true,
+  });
   const { colorMode } = useColorMode();
-  const bgColor = colorMode === "light" ? "#5455c2" : "#292c4e";
+  const classes =
+    colorMode === "light" ? "whitePatternEducation" : "navyPatternEducation";
 
   const Blur = (props) => {
     return (
@@ -53,18 +60,8 @@ const About = () => {
           <Box position={"relative"}>
             <Container maxW="7xl" mt={{ base: 12, md: "5rem" }} p={0}>
               <Heading
-                position={"relative"}
-                _after={{
-                  content: "''",
-                  width: useBreakpointValue({ base: "0%", md: "14%" }),
-                  height: useBreakpointValue({ base: "30%", md: "30%" }),
-                  position: "absolute",
-                  bottom: 1,
-                  left: 0,
-                  bg: bgColor,
-                  zIndex: -1,
-                }}
                 mb={8}
+                mx={{ base: 0, md: 4, lg: 4, xl: 0 }}
                 textAlign={{ base: "center", md: "start" }}
                 size={"3xl"}
                 color={
@@ -79,13 +76,14 @@ const About = () => {
                 <Box>
                   <Text
                     mx={2}
-                    fontSize={{ base: "lg", md: "2xl" }}
+                    fontSize={{ base: "lg", md: "lg", xl: "2xl" }}
                     textAlign={{ base: "center", md: "start" }}
                   >
                     I'm a recent graduate from Dublin, Ireland, with expertise
                     in frontend development, particularly in{" "}
                     <Text
                       as={"span"}
+                      fontSize={{ base: "lg", md: "lg", xl: "2xl" }}
                       position={"relative"}
                       _after={{
                         content: "''",
@@ -103,6 +101,7 @@ const About = () => {
                     and{" "}
                     <Text
                       as={"span"}
+                      fontSize={{ base: "lg", md: "lg", xl: "2xl" }}
                       position={"relative"}
                       _after={{
                         content: "''",
@@ -124,13 +123,14 @@ const About = () => {
                   <br />
                   <Text
                     mx={2}
-                    fontSize={{ base: "lg", md: "2xl" }}
+                    fontSize={{ base: "lg", md: "lg", xl: "2xl" }}
                     textAlign={{ base: "center", md: "start" }}
                   >
                     {" "}
                     Beyond web development, I'm deeply passionate about{" "}
                     <Text
                       as={"span"}
+                      fontSize={{ base: "lg", md: "lg", xl: "2xl" }}
                       position={"relative"}
                       _after={{
                         content: "''",
@@ -148,6 +148,7 @@ const About = () => {
                     and{" "}
                     <Text
                       as={"span"}
+                      fontSize={{ base: "lg", md: "lg", xl: "2xl" }}
                       position={"relative"}
                       _after={{
                         content: "''",
@@ -166,6 +167,7 @@ const About = () => {
                     in Crossfit. Additionally, I enjoy{" "}
                     <Text
                       as={"span"}
+                      fontSize={{ base: "lg", md: "lg", xl: "2xl" }}
                       position={"relative"}
                       _after={{
                         content: "''",
@@ -182,6 +184,7 @@ const About = () => {
                     </Text>
                     ,{" "}
                     <Text
+                      fontSize={{ base: "lg", md: "lg", xl: "2xl" }}
                       as={"span"}
                       position={"relative"}
                       _after={{
@@ -199,6 +202,7 @@ const About = () => {
                     </Text>
                     , and{" "}
                     <Text
+                      fontSize={{ base: "lg", md: "lg", xl: "2xl" }}
                       as={"span"}
                       position={"relative"}
                       _after={{
@@ -219,7 +223,7 @@ const About = () => {
                   <br />
                   <Text
                     mx={3}
-                    fontSize={{ base: "lg", md: "2xl" }}
+                    fontSize={{ base: "lg", md: "lg", xl: "2xl" }}
                     textAlign={{ base: "center", md: "start" }}
                   >
                     {" "}
@@ -234,9 +238,18 @@ const About = () => {
             <Blur
               position={"absolute"}
               top={40}
-              left={{ base: 20, md: 950 }}
+              left={{ base: 20, md: 80, xl: 950 }}
               style={{ filter: "blur(140px)" }}
             />
+            {isDesktop ? (
+              <Box
+                position={"absolute"}
+                top={45}
+                left={-150}
+                className={classes}
+                zIndex={-1}
+              />
+            ) : undefined}
           </Box>
         </span>
       </section>

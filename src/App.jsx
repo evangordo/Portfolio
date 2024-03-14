@@ -90,22 +90,8 @@ function App() {
 export default App;
 
 const Background = ({ children, colorMode }) => {
-  const backgroundColor = colorMode === "dark" ? "#1b2030" : "#d1d2d5";
-  const backgroundImage =
-    colorMode === "dark"
-      ? "linear-gradient(135deg, #292c4e 25%, transparent 25%), linear-gradient(225deg, #292c4e 25%, transparent 25%), linear-gradient(45deg, #292c4e 25%, transparent 25%), linear-gradient(315deg, #292c4e 25%, #1b2030 25%)"
-      : "linear-gradient(135deg, #f2f2f4 25%, transparent 25%), linear-gradient(225deg, #f2f2f4 25%, transparent 25%), linear-gradient(45deg, #f2f2f4 25%, transparent 25%), linear-gradient(315deg, #f2f2f4 25%, #d1d2d5 25%)";
-
   return (
-    <Box
-      className="background-color"
-      bg={backgroundColor}
-      opacity={1}
-      backgroundImage={backgroundImage}
-      backgroundPosition="40px 0, 40px 0, 0 0, 0 0"
-      backgroundSize="40px 40px"
-      backgroundRepeat="repeat"
-    >
+    <Box className={colorMode === "light" ? "whitepattern" : "background"}>
       {children}
     </Box>
   );

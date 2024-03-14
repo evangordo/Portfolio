@@ -80,7 +80,7 @@ export default function About() {
             </Flex>
 
             <Heading
-              mx={{ base: 6, lg: 0 }}
+              mx={{ base: 6, md: 1, lg: 0 }}
               textAlign={{ base: "center", sm: "start", md: "start" }}
               size={{ base: "xl", sm: "xl", lg: "3xl" }}
               _hover={{ textDecoration: "underline" }}
@@ -91,7 +91,7 @@ export default function About() {
             <Heading
               textAlign={{ base: "center", md: "start" }}
               size={{ base: "md", lg: "lg" }}
-              mx={{ base: 9, lg: 0 }}
+              mx={{ base: 9, md: 1, lg: 0 }}
               color={colorMode === "light" ? "#1a202d " : "grey"}
             >
               building things for the web. Improving and learning as I go on.
@@ -148,7 +148,8 @@ export default function About() {
               initial={{ y: "-1000", opacity: 0 }}
               animate={{ opacity: 1, fontSize: "3rem", x: 20, y: 15 }}
               transition={{ type: "spring", duration: 0.3, delay: 0.2 }}
-              mt={{ base: 7, lg: 0 }}
+              mt={{ base: 7, md: 0, lg: 0 }}
+              mb={{ base: 0, md: 7, lg: 0 }}
               mx={{ base: 0, lg: 0 }}
               borderColor="black"
               boxShadow={useColorModeValue(
@@ -158,7 +159,7 @@ export default function About() {
               mr={{ base: 12, md: 0 }}
               borderRadius="md"
               filter="grayscale(100%)"
-              boxSize={{ base: "220px", lg: "250px" }}
+              boxSize={{ base: "220px", md: "230px", lg: "290px" }}
               src={Linkedin}
               alt="Evan"
             />

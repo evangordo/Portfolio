@@ -18,10 +18,13 @@ import { boxBorderColor } from "../tools/colors";
 import Rakeoff from "../assets/rakeoff.png";
 import jobon from "../assets/jobon.png";
 import { motion, useInView } from "framer-motion";
+import "../App.css";
 
 const Projects = () => {
   const { colorMode } = useColorMode();
-  const bgColor = colorMode === "light" ? "#5455c2" : "#292c4e";
+
+  const classes =
+    colorMode === "light" ? "whitePatternEducation" : "navyPatternEducation";
 
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -35,73 +38,75 @@ const Projects = () => {
             transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
           }}
         >
-          <Container maxW="7xl" mt={{ base: 12, md: "5rem" }} p={0}>
-            <Heading
-              position={"relative"}
-              _after={{
-                content: "''",
-                width: useBreakpointValue({ base: "0%", md: "18%" }),
-                height: useBreakpointValue({ base: "30%", md: "30%" }),
-                position: "absolute",
-                bottom: 1,
-                left: 0,
-                bg: bgColor,
-                zIndex: -1,
-              }}
-              mb={8}
-              textAlign={{ base: "center", md: "start" }}
-              size={"3xl"}
-              color={
-                colorMode === "light"
-                  ? "solid #e2e8f0 2px"
-                  : "solid #363b4c 2px"
-              }
-            >
-              Projects
-            </Heading>
+          <Box position={"relative"}>
+            <Container maxW="7xl" mt={{ base: 12, md: "5rem" }} p={0}>
+              <Heading
+                mb={8}
+                mx={{ base: 0, md: 4, lg: 4, xl: 0 }}
+                textAlign={{ base: "center", md: "start" }}
+                size={"3xl"}
+                color={
+                  colorMode === "light"
+                    ? "solid #e2e8f0 2px"
+                    : "solid #363b4c 2px"
+                }
+              >
+                Projects
+              </Heading>
 
-            <Stack direction="column" spacing={{ base: "50px", md: "100px" }}>
-              <Project
-                image={Rakeoff}
-                heading={" May '23 - Present"}
-                description={[
-                  `Built on the ICP blockchain in which we received a $25k developer grant.`,
-                  `Designed the frontend using ReactJS and Chakra UI.`,
-                  `Utilised GraphQL and RestAPI for our analytics site.`,
-                ]}
-                bg={"purple.600"}
-                link={"https://rakeoff.io/"}
-                tags={[
-                  "React.JS",
-                  "JavaScript",
-                  "Chakra UI",
-                  "GraphQL",
-                  "Framer",
-                  "Blockchain",
-                  "Web3",
-                ]}
-              />
+              <Stack
+                direction="column"
+                spacing={{ base: "50px", md: "100px", lg: "100px" }}
+              >
+                <Project
+                  image={Rakeoff}
+                  heading={" May '23 - Present"}
+                  description={[
+                    `Built on the ICP blockchain in which we received a $25k developer grant.`,
+                    `Designed the frontend using ReactJS and Chakra UI.`,
+                    `Utilised GraphQL and RestAPI for our analytics site.`,
+                  ]}
+                  bg={"purple.600"}
+                  link={"https://rakeoff.io/"}
+                  tags={[
+                    "React.JS",
+                    "JavaScript",
+                    "Chakra UI",
+                    "GraphQL",
+                    "Framer",
+                    "Blockchain",
+                    "Web3",
+                  ]}
+                />
 
-              <Project
-                image={jobon}
-                heading={"2022 - 2023"}
-                description={[
-                  `Built a tradesman job site using Django and Javascript.`,
-                  `Awarded highest graded final year project in my class '23.`,
-                ]}
-                bg={"#004aad"}
-                tags={[
-                  "Django",
-                  "Python",
-                  "JavaScript",
-                  "Stripe API",
-                  "SQL.lite",
-                  "Bootstrap",
-                  "Git",
-                ]}
-              />
-            </Stack>
-          </Container>
+                <Project
+                  image={jobon}
+                  heading={"2022 - 2023"}
+                  description={[
+                    `Built a tradesman job site using Django and Javascript.`,
+                    `Awarded highest graded final year project in my class '23.`,
+                  ]}
+                  bg={"#004aad"}
+                  tags={[
+                    "Django",
+                    "Python",
+                    "JavaScript",
+                    "Stripe API",
+                    "SQL.lite",
+                    "Bootstrap",
+                    "Git",
+                  ]}
+                />
+              </Stack>
+            </Container>
+            <Box
+              position={"absolute"}
+              top={-35}
+              left={{ base: -25, md: -38 }}
+              className={classes}
+              zIndex={-1}
+            />
+          </Box>
         </span>
       </section>
     </>
@@ -112,17 +117,17 @@ export default Projects;
 export const Project = ({ heading, description, image, bg, tags, link }) => {
   return (
     <>
-      <SimpleGrid columns={[1, null, 3]} gap={6}>
+      <SimpleGrid columns={[1, 3, 3]} gap={6}>
         <Logo image={image} bg={bg} link={link} />
 
-        <TextStep heading={heading} description={description} />
+        <BulletPoint heading={heading} description={description} />
         <TechStack tags={tags} />
       </SimpleGrid>
     </>
   );
 };
 
-function TextStep({ heading, description }) {
+function BulletPoint({ heading, description }) {
   const { colorMode } = useColorMode();
 
   return (
@@ -131,7 +136,7 @@ function TextStep({ heading, description }) {
         lineHeight={1.1}
         fontWeight={600}
         fontSize={{ base: "3xl", md: "2xl", lg: "4xl", xl: "5xl" }}
-        mx={{ base: 2, md: 0 }}
+        mx={{ base: 2, md: 2, lg: 0 }}
       >
         <Text
           textAlign={{
@@ -142,6 +147,7 @@ function TextStep({ heading, description }) {
           }}
           mb={{ base: 2, md: 0, lg: 2, xl: 0 }}
           color={"grey.400"}
+          mx={{ base: 2, md: 2, lg: 0 }}
         >
           {heading}
         </Text>
@@ -158,7 +164,7 @@ function TextStep({ heading, description }) {
         }
         fontSize={{ base: "lg", md: "lg", lg: "xl" }}
         mt={{ base: 4, md: 2 }}
-        mx={{ base: 7, md: 0 }}
+        mx={{ base: 7, md: 2, lg: 0 }}
       >
         <UnorderedList>
           {description.map((point, index) => (
@@ -181,13 +187,13 @@ function Logo({ image, bg, link }) {
             flex={1}
             justify="center"
             align="center"
-            w={{ base: "full", md: "300px" }}
+            w={{ base: "full", md: "280px", lg: "300px" }}
           >
             <Box
               flex={1}
               justify={"center"}
               align={"center"}
-              height={{ base: "210px", md: "200px", lg: "80px", xl: "235px" }}
+              height={{ base: "210px", md: "230px", lg: "220px", xl: "235px" }}
               rounded={"xl"}
               mx={{ base: 12, md: 3, lg: 3, xl: 0 }}
               overflow={"hidden"}
@@ -198,9 +204,9 @@ function Logo({ image, bg, link }) {
             >
               <Image
                 src={image}
-                p={1}
-                m={{ base: -4, md: 0 }}
-                boxSize={{ base: "240px", md: "230px" }}
+                p={{ base: 1, md: 1, lg: 0 }}
+                m={{ base: -4, md: 0, lg: 0 }}
+                boxSize={{ base: "240px", md: "240px", lg: "230px" }}
                 alt="step"
                 objectFit="contain"
               />
@@ -230,7 +236,7 @@ const TechStack = ({ tags }) => {
         {tags.map((tag, index) => (
           <Box
             key={index}
-            mx={{ base: 12, md: 0 }}
+            mx={{ base: 12, md: 4, lg: 4, xl: 0 }}
             bg={"#5455c1"}
             border={boxBorderColor}
             rounded={"full"}
@@ -240,7 +246,7 @@ const TechStack = ({ tags }) => {
             h={{ base: "8", md: "10" }}
           >
             <Text
-              fontSize={{ base: "lg", md: "xl" }}
+              fontSize={{ base: "lg", md: "md", lg: "xl" }}
               color={"white"}
               align="center"
               p={{ base: -1, md: 1 }}

@@ -10,6 +10,8 @@ import {
   Text,
 } from "@chakra-ui/react";
 import EG from "../assets/EG.svg";
+import eg_Dark from "../assets/EG_Dark.svg";
+
 import githubLogo from "./../assets/github_logo.svg";
 import { motion } from "framer-motion";
 
@@ -36,7 +38,7 @@ const Footer = () => {
               w="auto"
               h={65}
               objectFit="contain"
-              src={EG}
+              src={colorMode === "light" ? eg_Dark : EG}
             />
           </Flex>
           <Text

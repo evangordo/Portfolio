@@ -22,6 +22,7 @@ import resume from "../assets/Resume_2024.pdf";
 import linkedin from "../assets/linkedin.png";
 import { Link } from "react-scroll";
 import EG from "../assets/EG.svg";
+import eg_Dark from "../assets/EG_Dark.svg";
 import { motion } from "framer-motion";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 
@@ -44,7 +45,11 @@ const Navbar = () => {
         <Flex h={24} justifyContent={"space-between"}>
           <Box p={4}>
             <Link to="hero">
-              <ChakraImage src={EG} width="60px" height="60px" />
+              <ChakraImage
+                src={colorMode === "light" ? eg_Dark : EG}
+                width="60px"
+                height="60px"
+              />
             </Link>
           </Box>
 
