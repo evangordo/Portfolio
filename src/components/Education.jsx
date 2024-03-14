@@ -58,7 +58,7 @@ const Education = () => {
               <Stack direction="column" spacing={{ base: "50px", md: "100px" }}>
                 <School
                   image={dcu}
-                  heading={"B.Sc, Computing & Business, 2019-2023"}
+                  heading={"B.Sc. Computing & Business, 2019-2023"}
                   description={[
                     `Graduated with first class honours, ranking 3rd.`,
                     `Highest graded final-year project.`,
@@ -131,8 +131,8 @@ function BulletPoint({ heading, description }) {
       <Heading
         lineHeight={1.1}
         fontWeight={600}
-        fontSize={{ base: "3xl", md: "2xl", lg: "4xl", xl: "5xl" }}
-        mx={{ base: 12, md: 2, lg: 2, xl: 0 }}
+        fontSize={{ base: "2xl", md: "2xl", lg: "4xl", xl: "5xl" }}
+        mx={{ base: 1, md: 2, lg: 2, xl: 0 }}
       >
         <Text
           textAlign={{

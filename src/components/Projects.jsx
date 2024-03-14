@@ -135,7 +135,7 @@ function BulletPoint({ heading, description }) {
       <Heading
         lineHeight={1.1}
         fontWeight={600}
-        fontSize={{ base: "3xl", md: "2xl", lg: "4xl", xl: "5xl" }}
+        fontSize={{ base: "2xl", md: "2xl", lg: "4xl", xl: "5xl" }}
         mx={{ base: 2, md: 2, lg: 0 }}
       >
         <Text
