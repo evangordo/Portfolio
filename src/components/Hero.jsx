@@ -83,7 +83,11 @@ export default function About() {
               mx={{ base: 6, md: 1, lg: 0 }}
               textAlign={{ base: "center", sm: "start", md: "start" }}
               size={{ base: "xl", sm: "xl", lg: "3xl" }}
-              _hover={{ textDecoration: "underline" }}
+              _dark={{ color: "grey" }}
+              style={{
+                textShadow:
+                  "0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px grey, 0 0 30px grey, 0 0 40px grey, 0 0 55px grey, 0 0 75px grey",
+              }}
             >
               Frontend Developer
             </Heading>
