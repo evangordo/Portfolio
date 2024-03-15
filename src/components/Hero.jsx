@@ -11,7 +11,7 @@ import {
   useColorMode,
 } from "@chakra-ui/react";
 
-import Linkedin from "../assets/profile.png";
+import Linkedin from "../assets/linkedin.svg";
 import Shamrock from "../assets/shamrock.png";
 import ReactLogo from "../assets/react.png";
 import JavaScipt from "../assets/javascript.png";
