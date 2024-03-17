@@ -79,6 +79,14 @@ const About = () => {
                     fontSize={{ base: "lg", md: "lg", xl: "2xl" }}
                     textAlign={{ base: "center", md: "start" }}
                   >
+                    Hey there👋
+                  </Text>
+                  <br />
+                  <Text
+                    mx={2}
+                    fontSize={{ base: "lg", md: "lg", xl: "2xl" }}
+                    textAlign={{ base: "center", md: "start" }}
+                  >
                     I am a recent graduate from Dublin, Ireland, with expertise
                     in frontend development, particularly in{" "}
                     <Text
