@@ -63,7 +63,6 @@ const Education = () => {
                     `Graduated with first class honours, ranking 3rd.`,
                     `Highest graded final-year project.`,
                     `Awarded the best Computer Science Research paper.`,
-                    "DCU tennis varsities player.",
                   ]}
                   bg={"#013d68 "}
                   link={"https://www.dcu.ie/"}
@@ -74,7 +73,7 @@ const Education = () => {
                   description={[
                     `6 months computer science exchange.`,
                     "Strengthened python programming.",
-                    "B1 in french language.",
+
                     `Extensive networking.`,
                   ]}
                   bg={"white "}
