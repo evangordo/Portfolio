@@ -171,8 +171,8 @@ const About = () => {
                     >
                       fitness
                     </Text>
-                    , particularly rugby and tennis, with also a keen interest
-                    in Crossfit. Additionally, I enjoy{" "}
+                    , particularly rugby and tennis, and I enjoy running .
+                    Additionally, I enjoy{" "}
                     <Text
                       as={"span"}
                       fontSize={{ base: "lg", md: "lg", xl: "2xl" }}

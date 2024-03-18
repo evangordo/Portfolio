@@ -63,16 +63,16 @@ const Projects = () => {
                   heading={" May '23 - Present"}
                   description={[
                     `Built on the ICP blockchain in which we received a $25k developer grant.`,
-                    `Designed the frontend using ReactJS and Chakra UI.`,
-                    `Utilised GraphQL and RestAPI for our analytics site.`,
+                    `Built the frontend using React and Chakra UI.`,
+                    `Utilised ReCharts and REST API for our analytics site.`,
                   ]}
                   bg={"purple.600"}
                   link={"https://rakeoff.io/"}
                   tags={[
-                    "ReactJS",
+                    "React",
                     "JavaScript",
                     "Chakra UI",
-                    "GraphQL",
+                    "REST API",
                     "Framer",
                     "Blockchain",
                     "Web3",
