@@ -64,7 +64,7 @@ const Projects = () => {
                   description={[
                     `Built on the ICP blockchain in which we received a $25k developer grant.`,
                     `Built the frontend using React and Chakra UI.`,
-                    `Utilised ReCharts and REST API for our analytics site.`,
+                    `Utilised ReCharts, REST and Context API for the analytics site.`,
                   ]}
                   bg={"purple.600"}
                   link={"https://rakeoff.io/"}
