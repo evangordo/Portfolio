@@ -17,6 +17,7 @@ import {
 import { boxBorderColor } from "../tools/colors";
 import Rakeoff from "../assets/rakeoff.png";
 import jobon from "../assets/jobon.png";
+import next from "../assets/next.png";
 import { motion, useInView } from "framer-motion";
 import "../App.css";
 
@@ -58,6 +59,27 @@ const Projects = () => {
                 direction="column"
                 spacing={{ base: "50px", md: "100px", lg: "100px" }}
               >
+                <Project
+                  image={next}
+                  heading={"Next.js food app"}
+                  description={[
+                    `Built a fullstack app using Next.js, React, AWS, BettersSQL.`,
+                    `Allows users to upload and share their meals via form and image picker.`,
+                    `Small project to learn about server-side rendering with Next.`,
+                  ]}
+                  bg={"white"}
+                  link={"https://github.com/evangordo/nextjs_meal_app"}
+                  tags={[
+                    "Next",
+                    "React",
+                    "AWS",
+                    "BetterSQL",
+
+                    "Database",
+                    "Fullstack",
+                    "Forms",
+                  ]}
+                />
                 <Project
                   image={Rakeoff}
                   heading={" May '23 - Present"}
@@ -204,7 +226,7 @@ function Logo({ image, bg, link }) {
             >
               <Image
                 src={image}
-                p={{ base: 1, md: 1, lg: 0 }}
+                p={{ base: 4, md: 1, lg: 0 }}
                 m={{ base: -4, md: 0, lg: 0 }}
                 boxSize={{ base: "240px", md: "240px", lg: "230px" }}
                 alt="step"
