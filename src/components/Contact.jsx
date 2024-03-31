@@ -36,14 +36,6 @@ const Contact = () => {
                 <Text
                   mx={2}
                   fontSize={{ base: "lg", md: "2xl" }}
-                  textAlign={{ base: "center", md: "start" }}
-                >
-                  Since you've made it this far, why not get in touch with me?!
-                </Text>
-                <br />
-                <Text
-                  mx={2}
-                  fontSize={{ base: "lg", md: "2xl" }}
                   _hover={{
                     color: "teal.500",
                   }}
