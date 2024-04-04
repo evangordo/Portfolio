@@ -60,27 +60,6 @@ const Projects = () => {
                 spacing={{ base: "50px", md: "100px", lg: "100px" }}
               >
                 <Project
-                  image={next}
-                  heading={"Next.js food app"}
-                  description={[
-                    `Built a fullstack app using Next.js, React, AWS, BettersSQL.`,
-                    `Allows users to upload and share their meals via form and image picker.`,
-                    `Small project to learn about server-side rendering with Next.`,
-                  ]}
-                  bg={"white"}
-                  link={"https://github.com/evangordo/nextjs_meal_app"}
-                  tags={[
-                    "Next",
-                    "React",
-                    "AWS",
-                    "BetterSQL",
-
-                    "Database",
-                    "Fullstack",
-                    "Forms",
-                  ]}
-                />
-                <Project
                   image={Rakeoff}
                   heading={" May '23 - Present"}
                   description={[
