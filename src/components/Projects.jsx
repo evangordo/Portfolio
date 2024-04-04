@@ -17,7 +17,6 @@ import {
 import { boxBorderColor } from "../tools/colors";
 import Rakeoff from "../assets/rakeoff.png";
 import jobon from "../assets/jobon.png";
-import next from "../assets/next.png";
 import { motion, useInView } from "framer-motion";
 import "../App.css";
 
