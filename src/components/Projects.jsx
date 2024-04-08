@@ -76,6 +76,7 @@ const Projects = () => {
                     "REST API",
                     "MongoDB",
                     "AWS",
+                    "Vercel",
                   ]}
                 />
 
