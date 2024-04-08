@@ -63,7 +63,7 @@ const Projects = () => {
                   image={lighthouse}
                   heading={"Lighthouse"}
                   description={[
-                    `Side-project - In process`,
+                    `Side-project - In progress`,
                     `Building a Rental property website `,
                     `Full-stack application using Nextjs`,
                   ]}
