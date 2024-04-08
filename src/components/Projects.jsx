@@ -17,6 +17,7 @@ import {
 import { boxBorderColor } from "../tools/colors";
 import Rakeoff from "../assets/rakeoff.png";
 import jobon from "../assets/jobon.png";
+import lighthouse from "../assets/lighthouse.png";
 import { motion, useInView } from "framer-motion";
 import "../App.css";
 
@@ -59,8 +60,28 @@ const Projects = () => {
                 spacing={{ base: "50px", md: "100px", lg: "100px" }}
               >
                 <Project
+                  image={lighthouse}
+                  heading={"Lighthouse"}
+                  description={[
+                    `Side-project - In process`,
+                    `Building a Rental property website `,
+                    `Full-stack application using Nextjs`,
+                  ]}
+                  bg={"#171923"}
+                  link={"https://www.lighthouseie.com/"}
+                  tags={[
+                    "Next.js",
+                    "React",
+                    "Chakra UI",
+                    "REST API",
+                    "MongoDB",
+                    "AWS",
+                  ]}
+                />
+
+                <Project
                   image={Rakeoff}
-                  heading={" May '23 - Present"}
+                  heading={"May '23 - Present"}
                   description={[
                     `Built on the ICP blockchain in which we received a $25k developer grant.`,
                     `Built the frontend using React and Chakra UI.`,
