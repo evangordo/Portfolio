@@ -52,7 +52,7 @@ const Footer = () => {
               color: "teal.500",
             }}
           >
-            Built using ReactJS, styled using Chakra UI, hosted with Netlify
+            Sofware Developer{" "}
           </Text>
           <HStack mt={3} gap={3}>
             <SocialIconLink
