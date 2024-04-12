@@ -72,7 +72,7 @@ const Projects = () => {
                   tags={[
                     "Next.js",
                     "React",
-                    "Chakra UI",
+                    "TypeScript",
                     "REST API",
                     "MongoDB",
                     "AWS",
