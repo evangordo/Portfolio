@@ -10,14 +10,13 @@ import {
   useBreakpointValue,
   useColorMode,
 } from "@chakra-ui/react";
-
+import Next from "../assets/next.svg";
 import Linkedin from "../assets/linkedin.svg";
 import Shamrock from "../assets/shamrock.png";
 import ReactLogo from "../assets/react.png";
 import JavaScipt from "../assets/javascript.png";
 import TypeScript from "../assets/typescript.png";
 import Chakra from "../assets/chakra.png";
-import Python from "../assets/python.png";
 import TailWind from "../assets/tailwindsvg.svg";
 import Figma from "../assets/figma.svg";
 import { motion } from "framer-motion";
@@ -120,14 +119,15 @@ export default function About() {
                     <Image boxSize={7} src={ReactLogo} />
                   </motion.div>
                   <motion.div variants={item}>
+                    <Image boxSize={7} src={Next} />
+                  </motion.div>
+                  <motion.div variants={item}>
                     <Image boxSize={7} src={JavaScipt} />
                   </motion.div>
                   <motion.div variants={item}>
                     <Image boxSize={7} src={TypeScript} />
                   </motion.div>
-                  <motion.div variants={item}>
-                    <Image boxSize={7} src={Python} />
-                  </motion.div>
+
                   <motion.div variants={item}>
                     <Image boxSize={7} src={Chakra} />
                   </motion.div>
