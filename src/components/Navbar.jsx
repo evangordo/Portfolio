@@ -168,7 +168,7 @@ const Navbar = () => {
                       <Divider />
                       <Button bg="">
                         <Link
-                          to="contact"
+                          to="#contact"
                           spy={true}
                           smooth={true}
                           duration={500}

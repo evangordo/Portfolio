@@ -5,12 +5,15 @@ import {
   Flex,
   Heading,
   Image,
+  Button,
   useColorModeValue,
   SimpleGrid,
   useBreakpointValue,
   useColorMode,
+  useDisclosure,
 } from "@chakra-ui/react";
 import Next from "../assets/next.svg";
+import { Link } from "react-scroll";
 import Linkedin from "../assets/linkedin.svg";
 import Shamrock from "../assets/shamrock.png";
 import ReactLogo from "../assets/react.png";
@@ -20,9 +23,11 @@ import Chakra from "../assets/chakra.png";
 import TailWind from "../assets/tailwindsvg.svg";
 import Figma from "../assets/figma.svg";
 import { motion } from "framer-motion";
+
 export const MotionImage = motion(Image);
 
 export default function About() {
+  const { onClose } = useDisclosure();
   const { colorMode } = useColorMode();
   const bgColor = colorMode === "light" ? "#1a202d " : "#ebebf1";
   const isDesktop = useBreakpointValue({
@@ -140,7 +145,32 @@ export default function About() {
                 </SimpleGrid>
               </motion.div>
             </Stack>
+            <Stack align={{ base: "center", md: "start", lg: "start" }}>
+              <Button
+                m={1}
+                id="contact"
+                _hover={{
+                  boxShadow: `0px 0px 10px 6px #454667`,
+                }}
+                boxShadow={`0px 0px 10px 3px #454667`}
+                w={{ base: "60%", md: "25%" }}
+                // mx={{ base: 16, md: 0 }}
+                size="lg"
+                color={colorMode === "light" ? "#1a202d " : "white"}
+              >
+                <Link
+                  to="#contact"
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                  onClick={onClose}
+                >
+                  Contact me
+                </Link>
+              </Button>
+            </Stack>
           </Stack>
+
           <Flex
             flex={1}
             justify={"center"}
@@ -163,7 +193,7 @@ export default function About() {
               mr={{ base: 12, md: 0 }}
               borderRadius="md"
               filter="grayscale(100%)"
-              boxSize={{ base: "220px", md: "230px", lg: "290px" }}
+              boxSize={{ base: "220px", md: "230px", lg: "300px" }}
               src={Linkedin}
               alt="Evan"
             />

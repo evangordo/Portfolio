@@ -55,7 +55,7 @@ function App() {
           <Box id="about">
             <About />
           </Box>
-          <Box id="contact">
+          <Box id="#contact">
             <Contact />
           </Box>
 
