@@ -147,14 +147,14 @@ export default function About() {
             </Stack>
             <Stack align={{ base: "center", md: "start", lg: "start" }}>
               <Button
-                m={1}
+                m={2}
+                ml={{ base: 0, md: -1 }}
                 id="contact"
                 _hover={{
                   boxShadow: `0px 0px 10px 6px #454667`,
                 }}
                 boxShadow={`0px 0px 10px 3px #454667`}
                 w={{ base: "60%", md: "25%" }}
-                // mx={{ base: 16, md: 0 }}
                 size="lg"
                 color={colorMode === "light" ? "#1a202d " : "white"}
               >

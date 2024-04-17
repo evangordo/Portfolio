@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { Container, Heading, Box, useColorMode } from "@chakra-ui/react";
+import { Container, Heading, useColorMode } from "@chakra-ui/react";
 import { useInView } from "framer-motion";
 import ContactForm from "./ContactForm";
 const Contact = () => {
@@ -32,11 +32,8 @@ const Contact = () => {
             >
               Contact
             </Heading>
-            <Container justifyContent={{ base: "center", md: "start" }}>
-              <Box>
-                <ContactForm />
-              </Box>
-            </Container>
+
+            <ContactForm />
           </Container>
         </span>
       </section>
