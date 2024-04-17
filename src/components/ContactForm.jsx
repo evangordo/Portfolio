@@ -98,8 +98,11 @@ const ContactForm = () => {
                       size={"lg"}
                       align="center"
                       variant="solid"
-                      color={colorMode === "dark" ? "white " : "grey"}
-                      _hover={{}}
+                      _hover={{
+                        boxShadow: `0px 0px 10px 6px #454667`,
+                      }}
+                      boxShadow={`0px 0px 10px 3px #454667`}
+                      color={colorMode === "light" ? "#1a202d " : "white"}
                       type="submit"
                       disabled={isSubmitting}
                     >
