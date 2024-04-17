@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
-import { Container, Heading, Text, Box, useColorMode } from "@chakra-ui/react";
+import { Container, Heading, Box, useColorMode } from "@chakra-ui/react";
 import { useInView } from "framer-motion";
+import ContactForm from "./ContactForm";
 const Contact = () => {
   const { colorMode } = useColorMode();
 
@@ -33,16 +34,7 @@ const Contact = () => {
             </Heading>
             <Container justifyContent={{ base: "center", md: "start" }}>
               <Box>
-                <Text
-                  mx={2}
-                  fontSize={{ base: "lg", md: "2xl" }}
-                  _hover={{
-                    color: "teal.500",
-                  }}
-                  textAlign={{ base: "center", md: "start" }}
-                >
-                  evan.gordon7@mail.dcu.ie
-                </Text>
+                <ContactForm />
               </Box>
             </Container>
           </Container>
