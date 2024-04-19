@@ -68,7 +68,6 @@ const Projects = () => {
                     `Full-stack application using Nextjs`,
                   ]}
                   bg={"#171923"}
-                  link={"https://www.lighthouseie.com/"}
                   tags={[
                     "Next.js",
                     "React",
