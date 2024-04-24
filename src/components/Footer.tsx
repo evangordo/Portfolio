@@ -32,6 +32,7 @@ const Footer = () => {
           justify={{ base: "center", md: "space-between" }}
           align={{ base: "center", md: "center" }}
         >
+
           <Flex align="center">
             <ChakraImage
               alt="rakeoff logo"
