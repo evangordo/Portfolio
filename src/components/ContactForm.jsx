@@ -83,20 +83,6 @@ const ContactForm = () => {
                         variant="ghost"
                         color={colorMode === "dark" ? "white" : "black"}
                         leftIcon={
-                          <MdPhone
-                            color={colorMode === "dark" ? "white" : "black"}
-                            size="20px"
-                          />
-                        }
-                      >
-                        +353 871926464
-                      </Button>
-                      <Button
-                        size="md"
-                        height="48px"
-                        variant="ghost"
-                        color={colorMode === "dark" ? "white" : "black"}
-                        leftIcon={
                           <MdEmail
                             color={colorMode === "dark" ? "white" : "black"}
                             size="20px"
