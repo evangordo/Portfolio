@@ -93,7 +93,7 @@ export default function About() {
                   "0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px grey, 0 0 30px grey, 0 0 40px grey, 0 0 55px grey, 0 0 75px grey",
               }}
             >
-              Frontend Developer
+              Fullstack Developer
             </Heading>
 
             <Heading
