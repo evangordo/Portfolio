@@ -21,7 +21,7 @@ import JavaScipt from "../assets/javascript.png";
 import TypeScript from "../assets/typescript.png";
 import Chakra from "../assets/chakra.png";
 import TailWind from "../assets/tailwindsvg.svg";
-import Figma from "../assets/figma.svg";
+import mongo from "../assets/mongo.png";
 import { motion } from "framer-motion";
 
 export const MotionImage = motion(Image);
@@ -140,7 +140,7 @@ export default function About() {
                     <Image boxSize={7} src={TailWind} />
                   </motion.div>
                   <motion.div variants={item}>
-                    <Image boxSize={7} src={Figma} />
+                    <Image boxSize={7} src={mongo} />
                   </motion.div>
                 </SimpleGrid>
               </motion.div>
