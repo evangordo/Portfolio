@@ -1,23 +1,25 @@
 import React, { useRef } from "react";
 import {
+  Image,
   Box,
   Heading,
   Text,
   SimpleGrid,
+  Flex,
   Stack,
   Container,
+  Link,
   UnorderedList,
   ListItem,
   useBreakpointValue,
   useColorMode,
 } from "@chakra-ui/react";
 import { boxBorderColor } from "../tools/colors";
-import next from "../assets/next.svg";
-
-import { useInView } from "framer-motion";
+import Rakeoff from "../assets/rakeoff.png";
+import { motion, useInView } from "framer-motion";
 import "../App.css";
 
-const Projects = () => {
+const Work = () => {
   const { colorMode } = useColorMode();
 
   const classes =
@@ -48,7 +50,7 @@ const Projects = () => {
                     : "solid #363b4c 2px"
                 }
               >
-                Projects
+                Work
               </Heading>
 
               <Stack
@@ -56,55 +58,23 @@ const Projects = () => {
                 spacing={{ base: "50px", md: "100px", lg: "100px" }}
               >
                 <Project
-                  heading={"E-commerce app"}
+                  image={Rakeoff}
+                  heading={"May '23 - Present"}
                   description={[
-                    `Built an e-ccomerce Saas app`,
-                    `Integrated Stripe API for customer checkout `,
-                    `Utilised Prisma for the databse`,
-                    `Styled using Tailwind CSS and Shadcn libary`,
+                    `Built on the ICP blockchain in which we received a $25k developer grant.`,
+                    `Built the frontend using React, Framer Motion, and Chakra UI.`,
+                    `Utilised the Context API and Redux for state management`,
                   ]}
+                  bg={"purple.600"}
+                  link={"https://rakeoff.io/"}
                   tags={[
-                    "Next.js",
-                    `Prisma`,
-                    `TypeScript`,
-                    "Stripe API",
-                    "Zod ",
-                    "Middleware",
-                    "Next auth",
-                  ]}
-                />
-                <Project
-                  image={next}
-                  heading={"Blog app"}
-                  description={[
-                    `Built a blog app with Nextjs User Autentication`,
-                    `Allows users to login with their GitHub `,
-                    `Full-stack application using Nextjs`,
-                  ]}
-                  tags={[
-                    "Next.js",
                     "React",
-                    "MongoDb",
-                    "Mongoose",
-                    "Middleware",
-                    "Next auth",
-                  ]}
-                />
-
-                <Project
-                  heading={"Tradesman app"}
-                  description={[
-                    `Built a tradesman job site using Django and Javascript.`,
-                    `Awarded highest graded final year project in my class '23.`,
-                  ]}
-                  tags={[
-                    "Django",
-                    "Python",
-                    "JavaScript",
-                    "Stripe API",
-                    "SQL.lite",
-                    "Bootstrap",
-                    "Git",
+                    "Redux",
+                    "Chakra UI",
+                    "Context API",
+                    "Framer",
+                    "Blockchain",
+                    "Web3",
                   ]}
                 />
               </Stack>
@@ -122,25 +92,46 @@ const Projects = () => {
     </>
   );
 };
-export default Projects;
+export default Work;
 
-export const Project = ({ heading, description, tags }) => {
+export const Project = ({ heading, description, image, bg, tags, link }) => {
   return (
     <>
       <SimpleGrid columns={[1, 3, 3]} gap={6}>
-        <Header heading={heading} />
-        <BulletPoint description={description} />
+        <Logo image={image} bg={bg} link={link} />
+
+        <BulletPoint heading={heading} description={description} />
         <TechStack tags={tags} />
       </SimpleGrid>
     </>
   );
 };
 
-function BulletPoint({ description }) {
+function BulletPoint({ heading, description }) {
   const { colorMode } = useColorMode();
 
   return (
     <div>
+      <Heading
+        lineHeight={1.1}
+        fontWeight={600}
+        fontSize={{ base: "2xl", md: "2xl", lg: "4xl", xl: "5xl" }}
+        mx={{ base: 2, md: 2, lg: 0 }}
+      >
+        <Text
+          textAlign={{
+            base: "center",
+            md: "center",
+            lg: "center",
+            xl: "start",
+          }}
+          mb={{ base: 2, md: 0, lg: 2, xl: 0 }}
+          color={"grey.400"}
+          mx={{ base: 2, md: 2, lg: 0 }}
+        >
+          {heading}
+        </Text>
+      </Heading>
       <Text
         textAlign={{
           base: "center",
@@ -167,33 +158,45 @@ function BulletPoint({ description }) {
   );
 }
 
-const Header = ({ heading }) => {
+function Logo({ image, bg, link }) {
   return (
-    <Heading
-      lineHeight={1.1}
-      fontWeight={600}
-      fontSize={{ base: "3xl", md: "2xl", lg: "4xl", xl: "5xl" }}
-      mx={{ base: 2, md: 2, lg: 0 }}
-    >
-      <Text
-        textAlign={{
-          base: "center",
-          md: "center",
-          lg: "center",
-          xl: "start",
-        }}
-        mb={{ base: 2, md: 0, lg: 2, xl: 0 }}
-        _dark={{ color: "grey" }}
-        style={{
-          textShadow:
-            "0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px grey, 0 0 30px grey, 0 0 40px grey, 0 0 55px grey, 0 0 75px grey",
-        }}
-      >
-        {heading}
-      </Text>
-    </Heading>
+    <>
+      <motion.a whileHover={{ scale: 1.1 }}>
+        <Link href={link} isExternal>
+          <Flex
+            flex={1}
+            justify="center"
+            align="center"
+            w={{ base: "full", md: "280px", lg: "300px" }}
+          >
+            <Box
+              flex={1}
+              justify={"center"}
+              align={"center"}
+              height={{ base: "210px", md: "230px", lg: "220px", xl: "235px" }}
+              rounded={"xl"}
+              mx={{ base: 12, md: 3, lg: 3, xl: 0 }}
+              overflow={"hidden"}
+              borderRadius="xl"
+              bg={bg}
+              border={boxBorderColor}
+              borderColor="black"
+            >
+              <Image
+                src={image}
+                p={{ base: 4, md: 1, lg: 0 }}
+                m={{ base: -4, md: 0, lg: 0 }}
+                boxSize={{ base: "240px", md: "240px", lg: "230px" }}
+                alt="step"
+                objectFit="contain"
+              />
+            </Box>
+          </Flex>
+        </Link>
+      </motion.a>
+    </>
   );
-};
+}
 const TechStack = ({ tags }) => {
   const { colorMode } = useColorMode();
 

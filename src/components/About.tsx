@@ -74,20 +74,20 @@ const About = () => {
               </Heading>
               <Container justifyContent={{ base: "center", md: "start" }}>
                 <Box>
-                  <Text
+                  {/* <Text
                     mx={2}
                     fontSize={{ base: "lg", md: "lg", xl: "2xl" }}
                     textAlign={{ base: "center", md: "start" }}
                   >
-                    Hey there👋
+                    
                   </Text>
-                  <br />
+                  <br /> */}
                   <Text
                     mx={2}
                     fontSize={{ base: "lg", md: "lg", xl: "2xl" }}
                     textAlign={{ base: "center", md: "start" }}
                   >
-                    I am a recent graduate from Dublin, Ireland, with expertise
+                    I'm a recent graduate from Dublin, Ireland, with expertise
                     in frontend development, particularly in{" "}
                     <Text
                       as={"span"}

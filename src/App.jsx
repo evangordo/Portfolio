@@ -8,6 +8,7 @@ import {
   About,
   Footer,
   Contact,
+  Work,
 } from "./components";
 import "./App.css";
 import EG from "./assets/EG.svg";
@@ -45,6 +46,9 @@ function App() {
               <Hero />
             </Box>
           </Background>
+          <Box id="work">
+            <Work />
+          </Box>
 
           <Box id="projects">
             <Projects />

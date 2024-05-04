@@ -6,3 +6,4 @@ export { default as ContactForm } from "./ContactForm";
 export { default as Contact } from "./Contact.tsx";
 export { default as Footer } from "./Footer.jsx";
 export { default as Hero } from "./Hero.jsx";
+export { default as Work } from "./Work.jsx";

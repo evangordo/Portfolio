@@ -16,6 +16,8 @@ import Next from "../assets/next.svg";
 import { Link } from "react-scroll";
 import Linkedin from "../assets/linkedin.svg";
 import Shamrock from "../assets/shamrock.png";
+import Prisma from "../assets/prisma.png";
+
 import ReactLogo from "../assets/react.png";
 import JavaScipt from "../assets/javascript.png";
 import TypeScript from "../assets/typescript.png";
@@ -117,7 +119,7 @@ export default function About() {
                 animate="visible"
               >
                 <SimpleGrid
-                  columns={[4, null, 7]}
+                  columns={[4, null, 8]}
                   spacing={{ base: 10, md: 5 }}
                 >
                   <motion.div variants={item}>
@@ -141,6 +143,9 @@ export default function About() {
                   </motion.div>
                   <motion.div variants={item}>
                     <Image boxSize={7} src={mongo} />
+                  </motion.div>
+                  <motion.div variants={item}>
+                    <Image boxSize={7} src={Prisma} />
                   </motion.div>
                 </SimpleGrid>
               </motion.div>
