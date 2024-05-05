@@ -12,7 +12,6 @@ import {
   useColorMode,
 } from "@chakra-ui/react";
 import { boxBorderColor } from "../tools/colors";
-import next from "../assets/next.svg";
 
 import { useInView } from "framer-motion";
 import "../App.css";
@@ -74,7 +73,6 @@ const Projects = () => {
                   ]}
                 />
                 <Project
-                  image={next}
                   heading={"Blog app"}
                   description={[
                     `Built a blog app with Nextjs User Autentication`,
@@ -90,6 +88,15 @@ const Projects = () => {
                     "Next auth",
                   ]}
                 />
+                <Project
+                  heading={"React Food app"}
+                  description={[
+                    `Built a food app with React and Redux for State`,
+                    `Utilised Firebase for the backend `,
+                    `Full-stack application`,
+                  ]}
+                  tags={["React", "Redux", "Firebase", "Devtools"]}
+                />
 
                 <Project
                   heading={"Tradesman app"}
@@ -104,7 +111,7 @@ const Projects = () => {
                     "Stripe API",
                     "SQL.lite",
                     "Bootstrap",
-                    "Git",
+                    "GitLab",
                   ]}
                 />
               </Stack>
@@ -151,7 +158,7 @@ function BulletPoint({ description }) {
         color={
           colorMode === "light" ? "solid #e2e8f0 2px" : "solid #363b4c 2px"
         }
-        fontSize={{ base: "lg", md: "lg", lg: "xl" }}
+        fontSize={{ base: "lg", md: "lg", lg: "2xl" }}
         mt={{ base: 4, md: 2 }}
         mx={{ base: 7, md: 2, lg: 0 }}
       >

@@ -63,7 +63,6 @@ const Work = () => {
                   description={[
                     `Built on the ICP blockchain in which we received a $25k developer grant.`,
                     `Built the frontend using React, Framer Motion, and Chakra UI.`,
-                    `Utilised the Context API and Redux for state management`,
                   ]}
                   bg={"purple.600"}
                   link={"https://rakeoff.io/"}
@@ -142,7 +141,7 @@ function BulletPoint({ heading, description }) {
         color={
           colorMode === "light" ? "solid #e2e8f0 2px" : "solid #363b4c 2px"
         }
-        fontSize={{ base: "lg", md: "lg", lg: "xl" }}
+        fontSize={{ base: "lg", md: "lg", lg: "2xl" }}
         mt={{ base: 4, md: 2 }}
         mx={{ base: 7, md: 2, lg: 0 }}
       >
