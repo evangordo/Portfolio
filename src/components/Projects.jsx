@@ -58,7 +58,7 @@ const Projects = () => {
                   heading={"E-commerce app"}
                   description={[
                     `Built an e-ccomerce Saas app`,
-                    `Integrated Stripe API for customer checkout `,
+                    `Integrated Stripe API for customer checkout and Resend for receipts `,
                     `Utilised Prisma for the databse`,
                     `Styled using Tailwind CSS and Shadcn libary`,
                   ]}
@@ -68,6 +68,7 @@ const Projects = () => {
                     `TypeScript`,
                     "Stripe API",
                     "Zod ",
+                    "Resend",
                     "Middleware",
                     "Next auth",
                   ]}
@@ -101,8 +102,8 @@ const Projects = () => {
                 <Project
                   heading={"Tradesman app"}
                   description={[
-                    `Built a tradesman job site using Django and Javascript.`,
-                    `Awarded highest graded final year project in my class '23.`,
+                    `Built a tradesman job site using Django and Javascript`,
+                    `Awarded highest graded final year project in my class '23`,
                   ]}
                   tags={[
                     "Django",
