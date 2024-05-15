@@ -157,6 +157,7 @@ const ContactForm = () => {
                               <BsPerson color="gray.800" />
                             </InputLeftElement>
                             <Input
+                              required
                               type="text"
                               bg="white"
                               name="user_name"
@@ -171,6 +172,7 @@ const ContactForm = () => {
                               <MdOutlineEmail color="gray.800" />
                             </InputLeftElement>
                             <Input
+                              required
                               type="email"
                               name="user_email"
                               bg="white"
@@ -181,6 +183,7 @@ const ContactForm = () => {
                         <FormControl id="message">
                           <FormLabel color={"grey"}>Message</FormLabel>
                           <Textarea
+                            required
                             borderColor="gray.300"
                             _hover={{
                               borderRadius: "gray.300",
