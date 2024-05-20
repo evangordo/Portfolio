@@ -59,7 +59,7 @@ const Work = () => {
               >
                 <Project
                   image={Rakeoff}
-                  heading={"May '23 - Present"}
+                  heading={"May '23 - April '24"}
                   description={[
                     `Built on the ICP blockchain in which we received a $25k developer grant.`,
                     `Built the frontend using React, Framer Motion, and Chakra UI.`,
