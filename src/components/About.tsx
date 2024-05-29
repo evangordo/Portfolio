@@ -125,8 +125,7 @@ const About = () => {
                       ReactJS
                     </Text>
                     . I have a strong desire to create visually appealing apps
-                    and webpages. As well, I'm interested working in both Web2
-                    and Web3.
+                    and webpages.
                   </Text>
                   <br />
                   <Text
