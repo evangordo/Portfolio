@@ -13,6 +13,10 @@ import {
   ListItem,
   useBreakpointValue,
   useColorMode,
+  HStack,
+  Wrap,
+  WrapItem,
+  Center,
 } from "@chakra-ui/react";
 import { boxBorderColor } from "../tools/colors";
 import Rakeoff from "../assets/rakeoff.png";
@@ -44,11 +48,11 @@ const Work = () => {
                 mx={{ base: 0, md: 4, lg: 4, xl: 0 }}
                 textAlign={{ base: "center", md: "start" }}
                 size={"3xl"}
-                color={
-                  colorMode === "light"
-                    ? "solid #e2e8f0 2px"
-                    : "solid #363b4c 2px"
-                }
+                _dark={{ color: "grey" }}
+                style={{
+                  textShadow:
+                    "0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px grey, 0 0 30px grey, 0 0 40px grey, 0 0 55px grey, 0 0 75px grey",
+                }}
               >
                 Work
               </Heading>
@@ -62,19 +66,11 @@ const Work = () => {
                   heading={"May '23 - April '24"}
                   description={[
                     `Built on the ICP blockchain in which we received a $25k developer grant.`,
-                    `Built the frontend using React, Framer Motion, and Chakra UI.`,
+                    `Frontend developer.`,
                   ]}
                   bg={"purple.600"}
                   link={"https://rakeoff.io/"}
-                  tags={[
-                    "React",
-                    "Redux",
-                    "Chakra UI",
-                    "Context API",
-                    "Framer",
-                    "Blockchain",
-                    "Web3",
-                  ]}
+                  tags={["React", "Chakra UI", "Context API", "Framer", "Web3"]}
                 />
               </Stack>
             </Container>
@@ -94,14 +90,30 @@ const Work = () => {
 export default Work;
 
 export const Project = ({ heading, description, image, bg, tags, link }) => {
+  const isDesktop = useBreakpointValue({
+    base: false,
+    md: true,
+    lg: true,
+    xl: true,
+  });
   return (
     <>
-      <SimpleGrid columns={[1, 3, 3]} gap={6}>
-        <Logo image={image} bg={bg} link={link} />
+      {isDesktop ? (
+        <HStack spacing={"74px"}>
+          <Logo image={image} bg={bg} link={link} />
 
-        <BulletPoint heading={heading} description={description} />
-        <TechStack tags={tags} />
-      </SimpleGrid>
+          <BulletPoint heading={heading} description={description} />
+
+          <Wrapper />
+        </HStack>
+      ) : (
+        <SimpleGrid columns={[1, 3, 3]} gap={6}>
+          <Logo image={image} bg={bg} link={link} />
+
+          <BulletPoint heading={heading} description={description} />
+          <TechStack tags={tags} />
+        </SimpleGrid>
+      )}
     </>
   );
 };
@@ -207,35 +219,71 @@ const TechStack = ({ tags }) => {
   });
   return (
     <>
-      <SimpleGrid
-        //had base but still threw off mobile so using breakpoint
-        minChildWidth={isDesktop ? "120px" : null}
-        spacing={"20px"}
-      >
-        {tags.map((tag, index) => (
-          <Box
-            key={index}
-            mx={{ base: 12, md: 4, lg: 4, xl: 0 }}
-            bg={"#5455c1"}
-            border={boxBorderColor}
-            rounded={"full"}
-            borderColor={
-              colorMode === "light" ? "solid #e2e8f0 2px" : "solid #363b4c 2px"
-            }
-            h={{ base: "8", md: "10" }}
+      {tags.map((tag, index) => (
+        <Box
+          key={index}
+          mx={{ base: 12, md: 4, lg: 4, xl: 0 }}
+          bg={"#31354f"}
+          border={boxBorderColor}
+          rounded={"md"}
+          borderColor={
+            colorMode === "light" ? "solid #e2e8f0 2px" : "solid #363b4c 2px"
+          }
+          h={{ base: "8", md: "12" }}
+        >
+          <Text
+            fontSize={{ base: "lg", md: "md", lg: "xl" }}
+            color={"white"}
+            align="center"
+            p={{ base: -1, md: 1 }}
+            mb={12}
           >
-            <Text
-              fontSize={{ base: "lg", md: "md", lg: "xl" }}
-              color={"white"}
-              align="center"
-              p={{ base: -1, md: 1 }}
-              mb={7}
-            >
-              {tag}
-            </Text>
-          </Box>
-        ))}
-      </SimpleGrid>
+            {tag}
+          </Text>
+        </Box>
+      ))}
     </>
+  );
+};
+
+const Wrapper = () => {
+  return (
+    <Wrap spacing="20px" border={"white"} justify="center">
+      <WrapItem border={boxBorderColor}>
+        <Center
+          // border={boxBorderColor}
+          p={1}
+          w="180px"
+          h="60px"
+          bg="#31354f"
+        >
+          <Text fontSize={"xl"}>React</Text>
+        </Center>
+      </WrapItem>
+      <WrapItem>
+        <Center w="180px" border={boxBorderColor} p={1} h="60px" bg="#31354f">
+          <Text p={1} fontSize={"xl"}>
+            Chakra UI
+          </Text>
+        </Center>
+      </WrapItem>
+      <WrapItem>
+        <Center w="120px" border={boxBorderColor} p={1} h="60px" bg="#31354f">
+          <Text fontSize={"xl"}>Context API</Text>
+        </Center>
+      </WrapItem>
+      <WrapItem>
+        <Center w="120px" borderColor={"white"} p={1} h="60px" bg="#31354f">
+          <Box borderColor={"white"}>
+            <Text fontSize={"xl"}>Framer</Text>
+          </Box>
+        </Center>
+      </WrapItem>
+      <WrapItem>
+        <Center w="180px" border={boxBorderColor} p={1} h="60px" bg="#31354f">
+          <Text fontSize={"xl"}>Web 3</Text>
+        </Center>
+      </WrapItem>
+    </Wrap>
   );
 };

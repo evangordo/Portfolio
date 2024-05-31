@@ -50,9 +50,9 @@ function App() {
             <Work />
           </Box>
 
-          <Box id="projects">
+          {/* <Box id="projects">
             <Projects />
-          </Box>
+          </Box> */}
           <Box id="education">
             <Education />
           </Box>

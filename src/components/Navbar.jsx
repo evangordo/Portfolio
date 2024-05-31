@@ -96,8 +96,8 @@ const Navbar = () => {
                           </Text>
                         </Link>
                       </Button>
-                      <Divider />
-                      <Button bg="">
+
+                      {/* <Button bg="">
                         <Link
                           to="projects"
                           spy={true}
@@ -120,7 +120,7 @@ const Navbar = () => {
                             Projects
                           </Text>
                         </Link>
-                      </Button>
+                      </Button> */}
                       <Divider />
                       <Button bg="">
                         <Link

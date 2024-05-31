@@ -47,11 +47,11 @@ const Education = () => {
                 mx={{ base: 0, md: 4, lg: 4, xl: 0 }}
                 textAlign={{ base: "center", md: "start" }}
                 size={"3xl"}
-                color={
-                  colorMode === "light"
-                    ? "solid #e2e8f0 2px"
-                    : "solid #363b4c 2px"
-                }
+                _dark={{ color: "grey" }}
+                style={{
+                  textShadow:
+                    "0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px grey, 0 0 30px grey, 0 0 40px grey, 0 0 55px grey, 0 0 75px grey",
+                }}
               >
                 Education
               </Heading>
@@ -62,7 +62,7 @@ const Education = () => {
                   description={[
                     `Graduated with first class honours, ranking 3rd.`,
                     `Highest graded final-year project.`,
-                    `Awarded the best Computer Science Research paper.`,
+                    `Awarded the sponsored Fineos best CS Research paper.`,
                   ]}
                   bg={"#013d68 "}
                   link={"https://www.dcu.ie/"}
@@ -71,10 +71,9 @@ const Education = () => {
                   image={bordeaux}
                   heading={"Erasmus, 2021-2022"}
                   description={[
-                    `6 months computer science exchange.`,
-                    "Strengthened python programming.",
+                    `6 months erasmus experience.`,
 
-                    `Extensive networking.`,
+                    `Extensive networking with internationals.`,
                   ]}
                   bg={"white "}
                   link={"https://www.u-bordeaux.fr/en"}
@@ -155,7 +154,7 @@ function BulletPoint({ heading, description }) {
           lg: "center",
           xl: "start",
         }}
-        fontSize={{ base: "lg", md: "lg", lg: "xl" }}
+        fontSize={{ base: "lg", md: "lg", lg: "2xl" }}
         mt={{ base: 4, md: 2 }}
         mx={{ base: 7, md: 0 }}
         color={

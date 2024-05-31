@@ -24,11 +24,11 @@ const Contact = () => {
               mx={{ base: 0, md: 4, lg: 4, xl: 0 }}
               textAlign={{ base: "center", md: "start" }}
               size={"3xl"}
-              color={
-                colorMode === "light"
-                  ? "solid #e2e8f0 2px"
-                  : "solid #363b4c 2px"
-              }
+              _dark={{ color: "grey" }}
+              style={{
+                textShadow:
+                  "0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px grey, 0 0 30px grey, 0 0 40px grey, 0 0 55px grey, 0 0 75px grey",
+              }}
             >
               Contact
             </Heading>

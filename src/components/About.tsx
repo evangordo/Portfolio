@@ -64,11 +64,17 @@ const About = () => {
                 mx={{ base: 0, md: 4, lg: 4, xl: 0 }}
                 textAlign={{ base: "center", md: "start" }}
                 size={"3xl"}
-                color={
-                  colorMode === "light"
-                    ? "solid #e2e8f0 2px"
-                    : "solid #363b4c 2px"
-                }
+                // mb={{ base: 2, md: 0, lg: 2, xl: 0 }}
+                _dark={{ color: "grey" }}
+                style={{
+                  textShadow:
+                    "0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px grey, 0 0 30px grey, 0 0 40px grey, 0 0 55px grey, 0 0 75px grey",
+                }}
+                // color={
+                //   colorMode === "light"
+                //     ? "solid #e2e8f0 2px"
+                //     : "solid #363b4c 2px"
+                // }
               >
                 About
               </Heading>
@@ -104,7 +110,7 @@ const About = () => {
                         zIndex: -1,
                       }}
                     >
-                      JavaScript
+                      Next
                     </Text>{" "}
                     and{" "}
                     <Text
@@ -122,10 +128,10 @@ const About = () => {
                         zIndex: -1,
                       }}
                     >
-                      ReactJS
+                      React
                     </Text>
                     . I have a strong desire to create visually appealing apps
-                    and webpages.
+                    and webpages. 
                   </Text>
                   <br />
                   <Text
@@ -170,8 +176,8 @@ const About = () => {
                     >
                       fitness
                     </Text>
-                    , particularly rugby and tennis, and I enjoy running .
-                    Additionally, I enjoy{" "}
+                    , particularly rugby and tennis.
+                    As well, I've many other interests such as {" "}
                     <Text
                       as={"span"}
                       fontSize={{ base: "lg", md: "lg", xl: "2xl" }}
@@ -205,7 +211,7 @@ const About = () => {
                         zIndex: -1,
                       }}
                     >
-                      music
+                      gaming
                     </Text>
                     , and{" "}
                     <Text
@@ -234,7 +240,7 @@ const About = () => {
                     textAlign={{ base: "center", md: "start" }}
                   >
                     {" "}
-                    Don't hesitate to reach out with any questions you may have.
+                  
                     Although I have only a couple of years of experience, I am
                     confident that I can fully contribute my skills while
                     continuing to learn along the way.

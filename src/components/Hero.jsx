@@ -152,7 +152,7 @@ export default function About() {
             </Stack>
             <Stack align={{ base: "center", md: "start", lg: "start" }}>
               <Button
-                m={2}
+                m={4}
                 ml={{ base: 0, md: -1 }}
                 id="contact"
                 _hover={{
@@ -170,7 +170,7 @@ export default function About() {
                   duration={500}
                   onClick={onClose}
                 >
-                  Contact me
+                  Contact
                 </Link>
               </Button>
             </Stack>
@@ -184,9 +184,9 @@ export default function About() {
             w={"full"}
           >
             <MotionImage
-              initial={{ y: "-1000", opacity: 0 }}
-              animate={{ opacity: 1, fontSize: "3rem", x: 20, y: 15 }}
-              transition={{ type: "spring", duration: 0.3, delay: 0.2 }}
+              // initial={{ y: "-1000", opacity: 0 }}
+              // animate={{ opacity: 1, fontSize: "3rem", x: 20, y: 15 }}
+              // transition={{ type: "spring", duration: 0.3, delay: 0.2 }}
               mt={{ base: 7, md: 0, lg: 0 }}
               mb={{ base: 0, md: 7, lg: 0 }}
               mx={{ base: 0, lg: 0 }}
