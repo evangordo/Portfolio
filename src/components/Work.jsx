@@ -245,31 +245,39 @@ const Wrapper = () => {
     <Wrap spacing="20px" border={"white"} justify="center">
       <WrapItem border={boxBorderColor}>
         <Center p={1} w="180px" h="60px" bg="#31354f">
-          <Text fontSize={"xl"}>React</Text>
+          <Text textColor={"white"} fontSize={"xl"}>
+            React
+          </Text>
         </Center>
       </WrapItem>
       <WrapItem>
         <Center w="180px" border={boxBorderColor} p={1} h="60px" bg="#31354f">
-          <Text p={1} fontSize={"xl"}>
+          <Text p={1} textColor={"white"} fontSize={"xl"}>
             Chakra UI
           </Text>
         </Center>
       </WrapItem>
       <WrapItem>
         <Center w="120px" border={boxBorderColor} p={1} h="60px" bg="#31354f">
-          <Text fontSize={"xl"}>Context API</Text>
+          <Text textColor={"white"} fontSize={"xl"}>
+            Context API
+          </Text>
         </Center>
       </WrapItem>
       <WrapItem>
         <Center w="120px" borderColor={"white"} p={1} h="60px" bg="#31354f">
           <Box borderColor={"white"}>
-            <Text fontSize={"xl"}>Framer</Text>
+            <Text textColor={"white"} fontSize={"xl"}>
+              Framer
+            </Text>
           </Box>
         </Center>
       </WrapItem>
       <WrapItem>
         <Center w="180px" border={boxBorderColor} p={1} h="60px" bg="#31354f">
-          <Text fontSize={"xl"}>Web 3</Text>
+          <Text textColor={"white"} fontSize={"xl"}>
+            Web 3
+          </Text>
         </Center>
       </WrapItem>
     </Wrap>
