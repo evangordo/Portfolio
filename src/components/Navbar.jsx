@@ -97,30 +97,6 @@ const Navbar = () => {
                         </Link>
                       </Button>
 
-                      {/* <Button bg="">
-                        <Link
-                          to="projects"
-                          spy={true}
-                          smooth={true}
-                          duration={500}
-                          onClick={onClose}
-                        >
-                          <Text
-                            _hover={{
-                              color: "#292c4e",
-                            }}
-                            fontSize={24}
-                            color={
-                              colorMode === "dark"
-                                ? "solid #e2e8f0 2px"
-                                : "solid #363b4c 2px"
-                            }
-                            fontWeight={700}
-                          >
-                            Projects
-                          </Text>
-                        </Link>
-                      </Button> */}
                       <Divider />
                       <Button bg="">
                         <Link

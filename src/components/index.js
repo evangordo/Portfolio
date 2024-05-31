@@ -1,4 +1,3 @@
-export { default as Projects } from "./Projects";
 export { default as Education } from "./Education.jsx";
 export { default as About } from "./About.tsx";
 export { default as Navbar } from "./Navbar";

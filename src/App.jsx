@@ -3,7 +3,6 @@ import { Box, Flex, useColorMode } from "@chakra-ui/react";
 import {
   Navbar,
   Hero,
-  Projects,
   Education,
   About,
   Footer,
@@ -49,10 +48,6 @@ function App() {
           <Box id="work">
             <Work />
           </Box>
-
-          {/* <Box id="projects">
-            <Projects />
-          </Box> */}
           <Box id="education">
             <Education />
           </Box>

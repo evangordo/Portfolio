@@ -211,12 +211,6 @@ function Logo({ image, bg, link }) {
 const TechStack = ({ tags }) => {
   const { colorMode } = useColorMode();
 
-  const isDesktop = useBreakpointValue({
-    base: false,
-    md: false,
-    lg: true,
-    xl: true,
-  });
   return (
     <>
       {tags.map((tag, index) => (
@@ -250,13 +244,7 @@ const Wrapper = () => {
   return (
     <Wrap spacing="20px" border={"white"} justify="center">
       <WrapItem border={boxBorderColor}>
-        <Center
-          // border={boxBorderColor}
-          p={1}
-          w="180px"
-          h="60px"
-          bg="#31354f"
-        >
+        <Center p={1} w="180px" h="60px" bg="#31354f">
           <Text fontSize={"xl"}>React</Text>
         </Center>
       </WrapItem>

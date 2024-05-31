@@ -3,7 +3,7 @@ import { Container, Heading, useColorMode } from "@chakra-ui/react";
 import { useInView } from "framer-motion";
 import ContactForm from "./ContactForm";
 const Contact = () => {
-  const { colorMode } = useColorMode();
+
 
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
