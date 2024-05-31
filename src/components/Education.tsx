@@ -17,8 +17,9 @@ import {
 } from "@chakra-ui/react";
 import "../App.css";
 import { boxBorderColor } from "../tools/colors";
-import dcu from "../assets/dcu.png";
+import dcu from '../assets/dcu.png'
 import bordeaux from "../assets/bordeaux.png";
+
 
 import { motion, useInView } from "framer-motion";
 
@@ -185,7 +186,7 @@ function Logo({ image, bg, link }) {
             w={{ base: "full", md: "280px", lg: "300px" }}
           >
             <Box
-              justify={"center"}
+              // justify={"center"}
               align={"center"}
               height={{ base: "210px", md: "230px", lg: "220px", xl: "235px" }}
               rounded={"xl"}

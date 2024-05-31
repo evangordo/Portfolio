@@ -184,9 +184,6 @@ export default function About() {
             w={"full"}
           >
             <MotionImage
-              // initial={{ y: "-1000", opacity: 0 }}
-              // animate={{ opacity: 1, fontSize: "3rem", x: 20, y: 15 }}
-              // transition={{ type: "spring", duration: 0.3, delay: 0.2 }}
               mt={{ base: 7, md: 0, lg: 0 }}
               mb={{ base: 0, md: 7, lg: 0 }}
               mx={{ base: 0, lg: 0 }}

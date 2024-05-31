@@ -27,6 +27,7 @@ import { motion } from "framer-motion";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 
 import { HamburgerIcon, ExternalLinkIcon } from "@chakra-ui/icons";
+import React from "react";
 
 const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
