@@ -50,6 +50,7 @@ const Navbar = () => {
                 src={colorMode === "light" ? eg_Dark : EG}
                 width="60px"
                 height="60px"
+                alt='eg'
               />
             </Link>
           </Box>

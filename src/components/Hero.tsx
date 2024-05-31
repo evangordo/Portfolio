@@ -123,29 +123,29 @@ export default function About() {
                   spacing={{ base: 10, md: 5 }}
                 >
                   <motion.div variants={item}>
-                    <Image boxSize={7} src={ReactLogo} />
+                    <Image alt='react' boxSize={7} src={ReactLogo} />
                   </motion.div>
                   <motion.div variants={item}>
-                    <Image boxSize={7} src={Next} />
+                    <Image alt= 'next'boxSize={7} src={Next} />
                   </motion.div>
                   <motion.div variants={item}>
-                    <Image boxSize={7} src={JavaScipt} />
+                    <Image alt='js' boxSize={7} src={JavaScipt} />
                   </motion.div>
                   <motion.div variants={item}>
-                    <Image boxSize={7} src={TypeScript} />
+                    <Image alt='ts' boxSize={7} src={TypeScript} />
                   </motion.div>
 
                   <motion.div variants={item}>
-                    <Image boxSize={7} src={Chakra} />
+                    <Image alt='chakra' boxSize={7} src={Chakra} />
                   </motion.div>
                   <motion.div variants={item}>
-                    <Image boxSize={7} src={TailWind} />
+                    <Image alt='tw'boxSize={7} src={TailWind} />
                   </motion.div>
                   <motion.div variants={item}>
-                    <Image boxSize={7} src={mongo} />
+                    <Image alt ='mongo'boxSize={7} src={mongo} />
                   </motion.div>
                   <motion.div variants={item}>
-                    <Image boxSize={7} src={Prisma} />
+                    <Image alt='prisma'boxSize={7} src={Prisma} />
                   </motion.div>
                 </SimpleGrid>
               </motion.div>

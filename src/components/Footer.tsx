@@ -35,7 +35,7 @@ const Footer = () => {
 
           <Flex align="center">
             <ChakraImage
-              alt="rakeoff logo"
+              alt="eg"
               w="auto"
               h={65}
               objectFit="contain"
