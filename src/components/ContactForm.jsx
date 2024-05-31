@@ -1,5 +1,5 @@
 import { useState } from "react";
-import React from 'react'
+import React from "react";
 import emailjs from "@emailjs/browser";
 import {
   Container,
@@ -29,7 +29,7 @@ const ContactForm = () => {
   const { colorMode } = useColorMode();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [stateMessage, setStateMessage] = useState(null);
-  const sendEmail = (e: any) => {
+  const sendEmail = (e) => {
     e.persist();
     e.preventDefault();
     setIsSubmitting(true);
