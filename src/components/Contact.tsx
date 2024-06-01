@@ -18,7 +18,7 @@ const Contact = () => {
             transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
           }}
         >
-          <Container maxW={"7xl"} mt={{ base: 12, md: "5rem" }} p={0}>
+          <Container maxW={"5xl"} mt={{ base: 12, md: "5rem" }} p={0}>
             <Heading
               mb={8}
               mx={{ base: 0, md: 4, lg: 4, xl: 0 }}

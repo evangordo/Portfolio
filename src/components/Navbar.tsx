@@ -18,7 +18,6 @@ import {
   Image as ChakraImage,
 } from "@chakra-ui/react";
 import githubLogo from "../assets/github_logo.svg";
-import resume from "../assets/Resume_2024.pdf";
 import linkedin from "../assets/linkedin.png";
 import { Link } from "react-scroll";
 import EG from "../assets/EG.svg";
@@ -26,7 +25,7 @@ import eg_Dark from "../assets/EG_Dark.svg";
 import { motion } from "framer-motion";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 
-import { HamburgerIcon, ExternalLinkIcon } from "@chakra-ui/icons";
+import { HamburgerIcon } from "@chakra-ui/icons";
 import React from "react";
 
 const Navbar = () => {
@@ -74,57 +73,8 @@ const Navbar = () => {
                   <DrawerHeader></DrawerHeader>
                   <DrawerBody>
                     <VStack onClick={onClose} gap={8} align="start">
-                      <Button bg="">
-                        <Link
-                          to="work"
-                          spy={true}
-                          smooth={true}
-                          duration={500}
-                          onClick={onClose}
-                        >
-                          <Text
-                            _hover={{
-                              color: "#292c4e",
-                            }}
-                            fontSize={24}
-                            color={
-                              colorMode === "dark"
-                                ? "solid #e2e8f0 2px"
-                                : "solid #363b4c 2px"
-                            }
-                            fontWeight={700}
-                          >
-                            Work
-                          </Text>
-                        </Link>
-                      </Button>
-
-                      <Divider />
-                      <Button bg="">
-                        <Link
-                          to="education"
-                          spy={true}
-                          smooth={true}
-                          duration={500}
-                          onClick={onClose}
-                        >
-                          <Text
-                            _hover={{
-                              color: "#292c4e",
-                            }}
-                            fontSize={24}
-                            color={
-                              colorMode === "dark"
-                                ? "solid #e2e8f0 2px"
-                                : "solid #363b4c 2px"
-                            }
-                            fontWeight={700}
-                          >
-                            Education
-                          </Text>
-                        </Link>
-                      </Button>
-                      <Divider />
+                  
+                    
                       <Button bg="">
                         <Link
                           to="about"
@@ -150,25 +100,8 @@ const Navbar = () => {
                         </Link>
                       </Button>
                       <Divider />
-                      <Button bg="">
-                        <a href={resume} isExternal>
-                          <Text
-                            _hover={{
-                              color: "#292c4e",
-                            }}
-                            fontSize={24}
-                            color={
-                              colorMode === "dark"
-                                ? "solid #e2e8f0 2px"
-                                : "solid #363b4c 2px"
-                            }
-                            fontWeight={700}
-                          >
-                            Resume <ExternalLinkIcon mb={1} />
-                          </Text>
-                        </a>
-                      </Button>
-                      <Divider />
+                   
+            
                       <Button bg="">
                         <Link
                           to="#contact"

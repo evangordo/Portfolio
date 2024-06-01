@@ -59,7 +59,7 @@ export default function About() {
     },
   };
   return (
-    <Container maxW={"7xl"}>
+    <Container maxW={"5xl"}>
       <Flex
         justify="center"
         as="h1"
@@ -88,7 +88,7 @@ export default function About() {
             <Heading
               mx={{ base: 6, md: 1, lg: 0 }}
               textAlign={{ base: "center", sm: "start", md: "start" }}
-              size={{ base: "xl", sm: "xl", lg: "3xl" }}
+              size={{ base: "xl", sm: "xl", lg: "2xl" }}
               _dark={{ color: "grey" }}
               style={{
                 textShadow:
