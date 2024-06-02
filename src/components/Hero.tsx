@@ -6,7 +6,6 @@ import {
   Heading,
   Image,
   Button,
-  useColorModeValue,
   SimpleGrid,
   useColorMode,
   useDisclosure,
@@ -25,12 +24,12 @@ import TailWind from "../assets/tailwindsvg.svg";
 import mongo from "../assets/mongo.png";
 import { motion } from "framer-motion";
 
-export const MotionImage = motion(Image);
+
 
 export default function About() {
   const { onClose } = useDisclosure();
   const { colorMode } = useColorMode();
-  const bgColor = colorMode === "light" ? "#1a202d " : "#ebebf1";
+
 
   const container = {
     hidden: { opacity: 1, scale: 0 },
@@ -170,15 +169,12 @@ export default function About() {
             position={"relative"}
             w={"full"}
           >
-            <MotionImage
+            <Image
               mt={{ base: 7, md: 0, lg: 0 }}
               mb={{ base: 0, md: 7, lg: 0 }}
               mx={{ base: 0, lg: 0 }}
               borderColor="black"
-              boxShadow={useColorModeValue(
-                `10px 5px 0 ${bgColor}`,
-                `10px 5px 0${bgColor}`
-              )}
+           
               mr={{ base: 12, md: 0 }}
               borderRadius="md"
               filter="grayscale(100%)"
