@@ -8,14 +8,13 @@ import {
   Button,
   useColorModeValue,
   SimpleGrid,
-  useBreakpointValue,
   useColorMode,
   useDisclosure,
 } from "@chakra-ui/react";
 import Next from "../assets/next.svg";
 import { Link } from "react-scroll";
-import Linkedin from "../assets/linkedin.svg";
-import Shamrock from "../assets/shamrock.png";
+
+
 import Prisma from "../assets/prisma.png";
 
 import ReactLogo from "../assets/react.png";
@@ -32,12 +31,6 @@ export default function About() {
   const { onClose } = useDisclosure();
   const { colorMode } = useColorMode();
   const bgColor = colorMode === "light" ? "#1a202d " : "#ebebf1";
-  const isDesktop = useBreakpointValue({
-    base: false,
-    md: false,
-    lg: true,
-    xl: true,
-  });
 
   const container = {
     hidden: { opacity: 1, scale: 0 },
@@ -76,13 +69,7 @@ export default function About() {
               <Heading size={{ base: "3xl", lg: "4xl" }} textAlign="center">
                 Evan Gordon
               </Heading>
-              {isDesktop ? (
-                <Image
-                  src={Shamrock}
-                  alt="Evan"
-                  boxSize={{ base: 5, lg: 10 }}
-                />
-              ) : null}
+          
             </Flex>
 
             <Heading
@@ -195,8 +182,8 @@ export default function About() {
               mr={{ base: 12, md: 0 }}
               borderRadius="md"
               filter="grayscale(100%)"
-              boxSize={{ base: "220px", md: "230px", lg: "300px" }}
-              src={Linkedin}
+              boxSize={{ base: "240px", md: "230px", lg: "300px" }}
+              src={'/linkedin.svg'}
               alt="Evan"
             />
           </Flex>

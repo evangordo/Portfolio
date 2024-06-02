@@ -147,63 +147,9 @@ const About = () => {
                       fitness
                     </Text>
                     , particularly rugby and tennis.
-                    As well, I've many other interests such as {" "}
-                    <Text
-                      as={"span"}
-                      fontSize={{ base: "lg", md: "lg", xl: "2xl" }}
-                      position={"relative"}
-                      _after={{
-                        content: "''",
-                        width: "full",
-                        height: "70%",
-                        position: "absolute",
-                        bottom: 1,
-                        left: 0,
-                        bg: "pink.400",
-                        zIndex: -1,
-                      }}
-                    >
-                      film
-                    </Text>
-                    ,{" "}
-                    <Text
-                      fontSize={{ base: "lg", md: "lg", xl: "2xl" }}
-                      as={"span"}
-                      position={"relative"}
-                      _after={{
-                        content: "''",
-                        width: "full",
-                        height: "70%",
-                        position: "absolute",
-                        bottom: 1,
-                        left: 0,
-                        bg: "pink.400",
-                        zIndex: -1,
-                      }}
-                    >
-                      gaming
-                    </Text>
-                    , and{" "}
-                    <Text
-                      fontSize={{ base: "lg", md: "lg", xl: "2xl" }}
-                      as={"span"}
-                      position={"relative"}
-                      _after={{
-                        content: "''",
-                        width: "full",
-                        height: "70%",
-                        position: "absolute",
-                        bottom: 1,
-                        left: 0,
-                        bg: "pink.400",
-                        zIndex: -1,
-                      }}
-                    >
-                      travel
-                    </Text>
-                    .
-                  </Text>
-                  <br />
+                  
+                 </Text>
+                 <br/>
                   <Text
                     mx={3}
                     fontSize={{ base: "lg", md: "lg", xl: "2xl" }}
