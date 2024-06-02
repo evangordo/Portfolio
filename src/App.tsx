@@ -15,14 +15,12 @@ function App() {
             <Hero />
           </Box>
         </Background>
-
         <Box id="about">
           <About />
         </Box>
         <Box id="#contact">
           <Contact />
         </Box>
-
         <Background colorMode={colorMode}>
           <Footer />
         </Background>

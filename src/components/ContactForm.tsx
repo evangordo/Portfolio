@@ -25,20 +25,21 @@ import { MdEmail, MdLocationOn, MdOutlineEmail } from "react-icons/md";
 import { BsGithub, BsPerson } from "react-icons/bs";
 import { FaXTwitter, FaLinkedinIn } from "react-icons/fa6";
 
+
 const ContactForm = () => {
   const { colorMode } = useColorMode();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [stateMessage, setStateMessage] = useState(null);
-  const sendEmail = (e) => {
-    e.persist();
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+  const [stateMessage, setStateMessage] = useState<string | null>(null);
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.persist()
     e.preventDefault();
     setIsSubmitting(true);
     emailjs
       .sendForm(
-        process.env.REACT_APP_SERVICE_ID,
-        process.env.REACT_APP_TEMPLATE_ID,
-        e.target,
-        process.env.REACT_APP_PUBLIC_KEY
+        process.env.REACT_APP_SERVICE_ID!,
+        process.env.REACT_APP_TEMPLATE_ID!,
+        e.target as HTMLFormElement,
+        process.env.REACT_APP_PUBLIC_KEY!
       )
       .then(
         (result) => {
@@ -57,7 +58,7 @@ const ContactForm = () => {
         }
       );
 
-    e.target.reset();
+      (e.target as HTMLFormElement).reset();
   };
   return (
     <Container maxW="full" mt={0} centerContent overflow="hidden">
@@ -113,6 +114,7 @@ const ContactForm = () => {
                       href="https://twitter.com/EvanGordon9343"
                       variant="ghost"
                       size="lg"
+                      aria-label="Twitter"
                       isRound={true}
                       _hover={{
                         boxShadow: `0px 0px 10px 6px #454667`,
@@ -126,6 +128,7 @@ const ContactForm = () => {
                       variant="ghost"
                       size="lg"
                       isRound={true}
+                      aria-label="Github"
                       _hover={{
                         boxShadow: `0px 0px 10px 6px #454667`,
                       }}
@@ -136,6 +139,7 @@ const ContactForm = () => {
                       href="https://www.linkedin.com/in/evan-gordo/"
                       variant="ghost"
                       size="lg"
+                      aria-label="Linkedin"
                       isRound={true}
                       _hover={{
                         boxShadow: `0px 0px 10px 6px #454667`,

@@ -168,7 +168,7 @@ const About = () => {
             {isDesktop ? (
               <Box
                 position={"absolute"}
-                top={45}
+                top={-5}
                 left={-150}
                 className={classes}
                 zIndex={-1}

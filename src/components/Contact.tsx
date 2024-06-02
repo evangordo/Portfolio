@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { Container, Heading } from "@chakra-ui/react";
 import { useInView } from "framer-motion";
-import ContactForm from "./ContactForm";
+import ContactForm from "./ContactForm.tsx";
 const Contact = () => {
 
 
