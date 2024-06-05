@@ -64,7 +64,7 @@ const ContactForm = () => {
     <Container maxW="full" mt={0} centerContent overflow="hidden">
       <Flex>
         <Box
-          className={colorMode === "dark" ? "contactForm" : "contactFormWhite"}
+       
           w="100%"
           borderRadius="lg"
           color="white"

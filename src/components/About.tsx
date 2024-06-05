@@ -144,9 +144,9 @@ const About = () => {
                         zIndex: -1,
                       }}
                     >
-                      fitness
+                      fitness.
                     </Text>
-                    , particularly rugby and tennis.
+                  
                   
                  </Text>
                  <br/>
